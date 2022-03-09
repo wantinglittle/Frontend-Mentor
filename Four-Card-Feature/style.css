@@ -126,7 +126,7 @@ img {
     left: 200px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
     body {
         flex-direction: column;
         width: 375px;
