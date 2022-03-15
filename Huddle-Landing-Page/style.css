@@ -12,11 +12,14 @@
 }
 
 body {
-    background-image: url("images/bg-desktop.svg");
+    background: url("images/bg-desktop.svg") no-repeat center center fixed;
     background-color: hsl(257, 40%, 49%);
     width: 80%;
     margin: auto;
     margin-top: 50px;
+    background-size: 200vh;
+   
+    
 }
 
 h1 {
@@ -59,12 +62,15 @@ button {
 
 .social {
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row-reverse;
-    width: 100px;
+    justify-content: end;
+    
 
 }
 
 .attribution {
     text-align: center;
+}
+
+i {
+    width: 35px;
 }
