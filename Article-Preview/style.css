@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    width: 100%;
+    color: hsl(217, 19%, 35%);
+    font-size: 15px;
+        
+}
+
+body {
+    background-color: hsl(210, 46%, 95%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    width: 730px;
+    height: 280px;
+    margin: 0, auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+}
+
+.left {
+    width: 40%;
+    overflow: hidden;
+}
+
+.left img{
+    width: 360px;
+    height: 280px;
+    border-radius: 10px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    padding: 35px;
+}
+
+
+.right h1 {
+    font-size: 1.3rem;
+}
+
+.right p {
+    font-size: .8rem;
+    
+}
+
+.designer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.designer-image {
+    width: 35px;
+    border-radius: 50px;
+}
+
+.subtext {
+    color:hsl(214, 17%, 51%);
+}
+
+.designer-details {
+    font-size: .8rem;
+    padding-left: 10px;
+}
+
+.designer-name {
+    font-weight: 1000;
+    color: hsl(217, 19%, 35%);
+}
+
+.designer-date {
+    color: hsl(212, 23%, 69%);
+}
+
+footer {
+    width: 700px;
+    font-size: .7rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: .7rem;
+}
+
+.share-button {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.share-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: hsl(214, 17%, 51%);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.share-arrow {
+    width: 15px;
+    height: 12px;
+    filter: brightness(250%);
+    margin-right: -1px;
+    margin-top: -1px;
+}
+
+.share-popup {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 55px;
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 12px;
+    right: -70px;
+    top: 130px;
+    z-index: 5;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.share-text {
+    color: hsl(212, 23%, 69%);
+    font-size: .8rem;
+    letter-spacing: 5px;
+    width: 60px;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 14px;
+    filter: opacity(.9);
+}
+
+.box-corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 35px;
+    bottom: 90px;
+    background-color: hsl(217, 19%, 35%);
+    transform: rotate(45deg);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popup-group {
+    filter: opacity(0);
+    z-index: -5;
+}
