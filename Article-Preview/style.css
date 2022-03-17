@@ -226,6 +226,7 @@ footer a {
 
     .popup-group {
         right: 200px;
+        transition-duration: 0ms;
     }
 
     footer {
@@ -291,7 +292,4 @@ footer a {
         filter: brightness(200);
     }
 
-    .popup-group-opacity {
-        filter: opacity(1)
-    }
 }
