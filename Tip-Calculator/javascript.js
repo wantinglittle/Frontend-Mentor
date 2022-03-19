@@ -68,17 +68,21 @@ numPeople.addEventListener('change', () => {
        numPeople.classList.add('no-zero')
        peopleContainer.classList.add('no-zero-text')
     }
-        else if(bill.value!=='' && tip && numPeople.value!='0'){
+        else if(bill.value!=='' && tip){
             numPeople.classList.remove('no-zero')
             peopleContainer.classList.remove('no-zero-text')    
             tipPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value*tip)/100).toFixed(2);
             totalPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
             }   
-        else if(bill.value!=='' && tip===0 && numPeople.value!='0') {
-                numPeople.classList.remove('no-zero')
-                peopleContainer.classList.remove('no-zero-text')
-                totalPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
+        else if(bill.value!=='' && tip===0) {
+            numPeople.classList.remove('no-zero')
+            peopleContainer.classList.remove('no-zero-text')
+            totalPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
             }
+        else {
+            numPeople.classList.remove('no-zero')
+            peopleContainer.classList.remove('no-zero-text')
+        }
 })
 
 // 'Reset' Button Activation
