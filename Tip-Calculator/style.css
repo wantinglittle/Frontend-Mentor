@@ -137,8 +137,27 @@ input:hover, input:focus {
     border-style: solid;
     border-width: 2px;
     outline: none;
-    
 }
+
+.no-zero-text {
+    z-index: 3;
+}
+
+.people-container {
+    position: relative;
+    width: 100%;
+}
+
+.cant-be-zero {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    color: red;
+    width: 100%;
+    text-align: right;
+    z-index: -2;
+}
+
 
 /* ------RIGHT BOX------ */
 

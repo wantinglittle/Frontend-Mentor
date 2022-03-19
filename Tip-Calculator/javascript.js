@@ -12,6 +12,7 @@ const fifteen = document.querySelector(".fifteen")
 const twentyfive = document.querySelector(".twentyfive")
 const fifty = document.querySelector(".fifty")
 const customTip = document.querySelector(".custom-input")
+const peopleContainer = document.querySelector(".people-container")
 let tip = 0 ;
 // const doCalc = () => {
 //     tipPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value*tip)/100).toFixed(2);
@@ -65,14 +66,17 @@ bill.addEventListener('change', () =>{
 numPeople.addEventListener('change', () => {
     if(numPeople.value=='0') {
        numPeople.classList.add('no-zero')
+       peopleContainer.classList.add('no-zero-text')
     }
-        else if(bill.value!==''&&tip){
-            numPeople.classList.remove('no-zero')    
+        else if(bill.value!=='' && tip && numPeople.value!='0'){
+            numPeople.classList.remove('no-zero')
+            peopleContainer.classList.remove('no-zero-text')    
             tipPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value*tip)/100).toFixed(2);
             totalPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
             }   
-        else if(bill.value!=='' && tip===0) {
-                numPeople.classList.remove('no-zero')  
+        else if(bill.value!=='' && tip===0 && numPeople.value!='0') {
+                numPeople.classList.remove('no-zero')
+                peopleContainer.classList.remove('no-zero-text')
                 totalPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
             }
 })
@@ -88,6 +92,7 @@ document.querySelectorAll('input').forEach(item => {
 reset.addEventListener('click', function() {
     inputs.forEach(input => input.value = '')
     numPeople.classList.remove('no-zero')
+    peopleContainer.classList.remove('no-zero-text')
     tipPerPerson.innerHTML = '$0.00'    
     totalPerPerson.innerHTML = '$0.00'
     customTip.innerHTML = 'Custom'
