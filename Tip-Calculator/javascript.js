@@ -58,7 +58,7 @@ bill.addEventListener('change', () =>{
         tipPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value*tip)/100).toFixed(2);
         totalPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
     } else if(numPeople.value!=='' && tip===0) {
-        totalPerPerson.innerHTML = '$'+Math.round(100*bill.value/numPeople.value)/100;
+        totalPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
     }
 })
 
