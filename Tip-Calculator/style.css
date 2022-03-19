@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace, sans-serif;
+    width: 100%;
+}
+
+:hover input, .percentage, .person, .dollar, button {
+    cursor: pointer;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin-right: 15px;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    min-height: 675px;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    z-index: -2;
+}
+
+header img {
+    width: 85px;
+}
+
+.container {
+    width: 920px;
+    height: 480px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+/* ------LEFT BOX------ */
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 380px;
+    width: 380px;
+    color: hsl(184, 14%, 56%);
+    font-size: .9rem;
+}
+
+.people-quantity, .bill-input, .custom-input {
+    text-align: right;
+    font-size: 1.5rem;
+    border: 2px transparent inset;
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(190, 16%, 68%);
+    margin-top: 10px;
+    border-radius: 5px;
+    
+}
+
+input:hover, input:focus {
+    border-color: hsl(172, 67%, 45%);
+    border-style: solid;
+    outline: none;
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: 118px 118px 118px;
+    grid-template-rows: 45px 45px;
+    grid-gap: 10px;
+    padding-top: 10px;
+}
+
+.percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: hsl(189, 41%, 97%);
+    text-decoration: none;
+    border: none;
+}
+
+.custom-input {
+    height: 45px;
+    margin-top: 0px;
+}
+
+.people, .bill-input, .custom-input, .people-quantity {
+    position: relative;
+    color: hsl(183, 100%, 15%);
+}
+
+.bill {
+    position: relative;
+}
+
+.person, .dollar {
+    width: 10px;
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    z-index: 3;
+}
+
+.custom-input::placeholder {    
+    color: hsl(186, 25%, 41%);
+}
+
+.no-zero {
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
+    outline: none;
+    
+}
+
+/* ------RIGHT BOX------ */
+
+.right {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 415px;
+    height: 415px;
+    border-radius: 14px;
+    background-color: hsl(183, 100%, 15%);
+    padding: 45px;
+}
+
+.tip-per-person-calc, .total-per-person-calc {
+    color: hsl(189, 41%, 97%);
+    font-size: .9rem;
+    padding-top: 12px;
+}
+
+.per-person {
+    font-size: .85rem;
+    color:hsl(184, 14%, 56%)
+}
+.calculated-tip, .calculated-total {
+    font-size: 2.4rem;
+    color: hsl(172, 67%, 45%);
+    text-align: right;
+}
+
+.reset-button {
+    grid-column-start: span 2;
+    height: 50px;
+    align-self: end;
+    border-radius: 5px;
+    border: none;
+    color:hsl(184, 14%, 56%);
+    background-color: hsl(183, 100%, 20%);
+    text-decoration: none;
+    border: none;
+    font-size: 1.2rem;
+    color: hsl(183, 100%, 15%);
+}
+
+.active-button {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+.active-button:hover {
+    background-color: hsl(185, 29%, 74%);
+}
+
+.bill-input::placeholder, 
+.people-quantity::placeholder {
+    color: hsl(185, 29%, 74%);
+}
+
+footer {
+    width: 700px;
+    font-size: .7rem;
+    margin-top: 20px;
+    text-align: center;
+    color:hsl(183, 100%, 15%);
+}
+
+
+
+@media (max-width: 675px) {
+    body{
+        height: 950px;
+    }
+    
+    .container {
+        flex-direction: column;
+        width: 375px;
+        height: 790px;
+        margin-top: 60px;
+        padding: 40px 30px 40px 30px;
+
+    }
+
+    .tip-grid {
+        grid-template-columns: 148px 148px;
+        grid-template-rows: 50px 50px 50px;
+        gap: 17px;
+    }
+
+    .left {
+        height: 480px;
+        width: 100%;
+    }
+
+    .right {
+        height: 255px;
+        width: 100%;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .bill-input {
+        width: 310px;
+    }
+
+    footer {
+        width: 375px;
+    }
+}
