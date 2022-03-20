@@ -37,7 +37,7 @@ document.querySelectorAll('.percentage').forEach(item => {
     reset.classList.add("active-button")
     item.classList.add("active-button")
     tip = item.value
-    if(numPeople.value!==''){
+    if(numPeople.value!==''&&numPeople.value!='0'){
         tipPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value*tip)/100).toFixed(2);
         totalPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
     }
@@ -50,7 +50,7 @@ const customEntry = () => {
         item.classList.remove('active-button')
     })
     tip = customTip.value/100
-    if(numPeople.value!==''){
+    if(numPeople.value!==''&&numPeople.value!='0'){
         tipPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value*tip)/100).toFixed(2);
         totalPerPerson.innerHTML = '$'+(Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
     }
