@@ -19,6 +19,14 @@ let tip = 0 ;
 //     totalPerPerson.innerHTML = '$' + (Math.round(100*bill.value/numPeople.value)/100).toFixed(2);
 // }
 
+document.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13 || e.which === 13) {
+        e.preventDefault();
+        return false;
+    }
+    
+});
+
 // Percentage selector
 document.querySelectorAll('.percentage').forEach(item => {
     item.addEventListener('click', event => {
