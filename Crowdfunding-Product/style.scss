@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+$cyan: hsl(176, 50%, 47%);
+$dark-cyan: hsl(176, 72%, 28%);
+$dark-gray: hsl(0, 0%, 48%);
+$light-gray: rgb(247, 247, 247);
+$medium-gray: rgb(182, 182, 182);
+$lt-medium-gray: rgb(228, 228, 228);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Commissioner', sans-serif;
+    :hover button {
+        cursor: pointer;
+    }
+}
+
+:root {
+    box-sizing: border-box;
+    width: 100%;
+    
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background: url("images/image-hero-desktop.jpg") no-repeat;
+    width: 1440px;
+    height: 400px;
+    ul {
+        display: flex;
+        padding-right: 142px;
+        list-style-type: none;
+        padding-top: 45px;
+        li {
+            padding-left: 15px;
+            color: $light-gray;
+        }
+    }
+}
+
+.top img {
+    width: 130px;
+    height: 20px;
+    padding-top: 45px;
+    padding-left: 142px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 1440px;
+    height: 1760px;
+    background-color: $light-gray;
+}
+
+.content-dark {
+    filter: brightness(50%);
+}
+
+.title, .progress, .bottom-container {
+    background-color: white;
+    padding: 45px;
+    margin-bottom: 30px;
+}
+
+.container {
+    position: absolute;
+    width: 730px;
+    background-color: $light-gray;
+    top: -90px;
+    border-radius: 8px;
+    
+    
+}
+
+// Top white box section
+
+.title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    img {
+        width: 50px;
+        position: absolute;
+        top: -25px;
+    }
+    p {
+        color: $dark-gray;
+        padding-top: 10px;
+        font-size: .85rem;
+        font-weight: 500;
+    }
+    div {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 25px;
+    }
+        .back-this-project {
+            width: 200px;
+            height: 55px;
+            background-color: $cyan;
+            color: white;
+            border-radius: 20px;
+            border-style: none;
+            font-weight: 500;
+        }
+        .bookmark {
+            width: 150px;
+            height: 55px;
+            font-weight: 700;
+            background-color: $light-gray;
+            border-radius: 20px;
+            border-style: none;
+            color: $dark-gray;
+            text-align: right;
+            padding-right: 28px;
+            transition: ease-out;
+            transition-duration: 200ms;
+        }
+        .bookmark-toggle {
+            color: $cyan;
+            width: 165px;
+        }
+        .bookmark-image {
+            height: 55px;
+            width: 55px;
+            top: 128px;
+            right: 155px;
+            transition: ease-out;
+            transition-duration: 200ms;
+        }
+        .bookmark-image-toggle {
+            right: 170px;
+            filter: invert(60%) sepia(70%) saturate(362%) hue-rotate(127deg) brightness(89%) contrast(89%);
+        }
+}
+
+.bookmark-image:hover{
+    cursor: pointer;
+}
+
+
+// Middle white box section
+.progress {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    .stats {
+        display: flex;
+        h1 {
+            font-size: 1.6rem;
+
+        }
+        p {
+            color: $dark-gray;
+            font-size: .85rem;
+            font-weight: 500;
+            opacity: 80%;
+            margin-top: 5px;
+        }
+        div:nth-child(1) {
+            padding-right: 42px;
+        }
+        div:nth-child(2) {
+            padding-right: 72px;
+        }
+        div:nth-child(2), div:nth-child(3) {
+            padding-left: 42px;
+            border-left-width: 1px;
+            border-left-color: $medium-gray;
+            border-left-style: solid;
+        } 
+    }
+}
+.gray-line {
+    background-color: $light-gray;
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 25px;
+    .cyan-line {
+        background-color: $cyan;
+        height: 10px;
+        width: 80%;
+        border-radius: 10px;
+    }
+}
+
+
+// Bottom box section
+.about, .bamboo, .black, .mahogany{
+    h1 {
+        font-size: 1.2rem;
+    }
+    .pledge-box-middle, .about-description {
+        font-size: .9rem;
+        color: $medium-gray;
+        line-height: 24px;
+        font-weight: 500;
+    }
+}
+
+    .bamboo, .black, .mahogany {
+    border-width: 1px;
+    border-style: solid;
+    border-color: $lt-medium-gray;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 25px;
+    p {
+        color: $cyan;
+        font-size: .8rem;
+        font-weight: 800;
+    }
+}
+.pledge-box-top {
+    display: flex;
+    justify-content: space-between;
+}
+.pledge-box-middle, .about-description {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.pledge-box-bottom{
+    display: grid;
+    grid-template-columns: auto 160px;
+}
+.pledges-left {
+    display: flex;
+    align-items: center;
+    h1 {
+        font-size: 1.6rem;
+        padding-right: 6px;
+    }
+    p {
+        color: $medium-gray
+    }
+}
+.mahogany {
+    opacity: 50%;
+    .out-of-stock {
+        background-color: $medium-gray;
+    }
+}
+.select-reward {
+    background-color: $cyan;
+    
+}
+.select-reward, .out-of-stock {
+    border-style: none;
+    border-radius: 50px;
+    height: 45px;
+    width: 155px;
+    color: white;
+    font-weight: 500;
+}
+
+.select-reward:hover, .back-this-project:hover {
+    background-color: $dark-cyan;
+}
+
+footer {
+    color: white;
+}
+
+// -------------- M O D A L --------------
+
+.modal-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    :hover input, label {
+        cursor: pointer;
+    }
+}
+
+.modal, .modal form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 840px;
+    width: 670px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px 50px 50px 50px;
+    margin-top: 30px;
+    gap: 25px;
+    h1, p {
+        align-self: flex-start;
+    }
+    
+}
+
+.modal-box, .modal-mahogany {
+    border-style: solid;
+    border-width: 1px;
+    border-color: $lt-medium-gray;
+    border-radius: 6px;
+}
+
+.modal-mahogany {
+    opacity: 50%;
+}
+
+.show-modal {
+    opacity: 100%;
+    pointer-events: auto;
+    
+}
+
+.close-modal {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 3;
+}
+
+:hover .close-modal {
+    filter: brightness(50%);
+    cursor: pointer;
+}
+
+.modal-box {
+    padding: 20px;
+    margin-top: 10px;
+    label {
+        display: flex;
+        padding-right: 15px;
+        font-weight: 700;
+        .radio-no-pledge {
+            display: none;
+        }
+        .radio-no-pledge:checked + .radio-revised::after {
+            transform: scale(1)
+        }
+
+        .radio-revised {
+            width: 16px;
+            height: 16px;
+            border: 1px $lt-medium-gray;
+            border-style: solid;
+            border-radius: 50%;
+            margin-right: 20px;
+            padding: 6px;
+        }
+        .radio-revised::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: $cyan;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform 150ms;
+        }
+    }
+    label:hover {
+        color: $cyan;
+        div {
+            border-color: $cyan;
+        }
+    }
+    div {
+        display: flex;
+        align-items: center;
+        label {
+            padding-right: 15px;
+            font-weight: 700;
+        }
+        .text1 {
+            font-weight: 700;
+            color: $cyan;
+        }
+        .text2 {
+            font-weight: 700;
+            margin-left: auto;
+        }
+        .text3 {
+            font-size: .9rem;
+            color: $medium-gray;
+            font-weight: 500;
+            padding-left: 7px;
+            padding-right: 12px;
+        }
+    }
+    p {
+        font-size: .9rem;
+        color: $medium-gray;
+        line-height: 24px;
+        font-weight: 500;
+        padding-left: 50px;
+        padding-top: 15px;
+    }
+}
+
+
+

@@ -6,6 +6,9 @@
     font-family: 'Space Mono', monospace, sans-serif;
     width: 100%;
 }
+:hover {
+    transition: 300ms;
+}
 
 :hover input, .percentage, .person, .dollar, button {
     cursor: pointer;
