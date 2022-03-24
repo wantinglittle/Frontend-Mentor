@@ -59,11 +59,14 @@ body {
     }
 }
 
-.top img {
+.logo {
     width: 130px;
     height: 20px;
     padding-top: 45px;
     padding-left: 142px;
+}
+.hamburger {
+    display: none;
 }
 
 .content {
@@ -439,6 +442,7 @@ footer {
         padding-left: 20px;
     }
     .pledge-amount-container, .pledge-amount {
+        text-align: right;
         margin-left: auto;
         margin-right: 12px;
         width: 90px;
@@ -447,7 +451,7 @@ footer {
         border-radius: 20px;
         color: black;
         font-weight: 700;
-        text-align: center;
+        
     }
     .pledge-amount {
         border: 1px $lt-medium-gray solid;
@@ -563,4 +567,141 @@ footer {
 
 .show-thanks {
     display: flex;
+}
+
+// mobile reformatting
+
+@media (max-width: 675px) {
+    .top {
+        width: 385px;
+        height: 300px;
+        background: url("images/image-hero-mobile.jpg") no-repeat center;
+        background-size: auto 300px;
+        .logo {
+            padding-top: 30px;
+            padding-left: 25px;
+        }
+        .hamburger {
+            display: block;
+            width: 17px;
+            height: 17px;
+            margin-right: 25px;
+            margin-top: 30px;
+        }
+        .menu-container {
+            display: none;
+            justify-content: center;
+            width: 100%;
+            position: fixed;
+            z-index: 3;
+            img {
+                position: fixed;
+                width: 15px;
+                height: 15px;
+                right: 25px;
+                top: 23px;
+            }
+            .menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                position: relative;
+                height: 200px;
+                width: 200px;
+                margin-top: 80px;
+                background-color: white;
+                padding-top: 0;
+                border-radius: 8px;
+                li {
+                    color: black;
+                    width: 317px;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    padding-left: 25px;
+                }
+                li:nth-child(2) {
+                    border-top: 1px solid $lt-medium-gray;
+                    border-bottom: 1px solid $lt-medium-gray;
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                }
+                li:nth-child(1) {
+                    padding-top: 10px;
+                }
+                li:nth-child(3) {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+    .content {
+        height: 2300px;
+        width: 375px;
+        .bookmark {
+            display: none;
+            padding: 0;
+        }
+        .bookmark-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .bookmark-image {
+            position: static;
+        }
+    }
+    .container {
+        width: 340px;
+        top: -55px
+    }
+    .title, .progress, .bottom-container {
+        padding: 30px;
+    }
+    .modal-container {
+        width: 375px;
+    }
+    .title {
+        height: 200px;
+        text-align: center;
+        justify-content: space-between;
+        h1 {
+            padding-top: 20px;
+        }
+    }
+    .progress {
+        .stats {
+            flex-direction: column;
+            align-items: center;
+            div {
+                text-align: center;
+            }
+            div:nth-child(1) {
+                padding-right: 0;
+                padding-bottom: 15px;
+            }
+            div:nth-child(2), div:nth-child(3) {
+                padding-right: 0;
+                padding-left: 0;
+                border-left-width: 0px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border-top: 1px $medium-gray solid;
+            } 
+        }
+
+    }
+    .pledge-box-top {
+        flex-direction: column;
+        line-height: 25px;
+        h1 {
+            font-size: .8rem;
+        }
+    }
+    .pledge-box-bottom {
+        display: flex;
+        flex-direction: column;
+        .pledges-left {
+            padding-bottom: 20px;
+        }
+    }
 }

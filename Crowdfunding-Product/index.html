@@ -12,12 +12,16 @@
 
 <body>
   <section class="top">
-    <img src="images/logo.svg" alt="crowdfund logo">
-    <ul>
-      <li>About</li>
-      <li>Discover</li>
-      <li>Get Started</li>
-    </ul>
+    <img src="images/logo.svg" alt="crowdfund logo" class="logo">
+    <img src="images/icon-hamburger.svg" alt="hamburger menu" class="hamburger">
+    <div class="menu-container">
+      <img src="images/icon-close-menu.svg" alt="close menu">
+      <ul class="menu">
+        <li>About</li>
+        <li>Discover</li>
+        <li>Get Started</li>
+      </ul>
+    </div>
   </section>
   <section class="content">
     <main class="container">
@@ -25,7 +29,7 @@
         <img src="images/logo-mastercraft.svg" alt="mastercraft logo">
         <h1>Mastercraft Bamboo Monitor Riser</h1>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
-        <div>
+        <div class="bookmark-section">
           <button class="back-this-project">Back this project</button>
           <button class="bookmark">Bookmark</button>
           <img src="images/icon-bookmark.svg" alt="bookmark" class="bookmark-image">
@@ -161,7 +165,7 @@
           <div class="bamboo-enter-your-pledge">
             <p>Enter your pledge</p>
             <div class="pledge-amount-container">
-              <input type="number" value="25" min="25" class="pledge-amount">
+              <input type="number" value="25" name="bamboo-pledge-amount" class="bamboo-pledge-amount pledge-amount">
               <p class="dollar-sign">$</p>
             </div>
             <button class="continue bob">Continue</button>
@@ -188,17 +192,12 @@
           <div class="black-enter-your-pledge">
             <p>Enter your pledge</p>
             <div class="pledge-amount-container">
-              <input type="number" value="75" min="75" class="pledge-amount">
+              <input type="number" value="75" min="75" name="black-pledge-amount" class="black-pledge-amount pledge-amount" maxlength="6">
               <p class="dollar-sign">$</p>
             </div>
             <button class="continue" type="submit">Continue</button>
           </div>
         </div>
-        <!-- Selected pledge start -->
-        <!-- Enter your pledge
-        $75
-        Continue -->
-        <!-- Selected pledge end -->
         <div class="modal-mahogany modal-box">
           <div>
             <label>

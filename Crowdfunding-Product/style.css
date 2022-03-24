@@ -61,11 +61,15 @@ body {
   color: #f7f7f7;
 }
 
-.top img {
+.logo {
   width: 130px;
   height: 20px;
   padding-top: 45px;
   padding-left: 142px;
+}
+
+.hamburger {
+  display: none;
 }
 
 .content {
@@ -546,6 +550,7 @@ footer {
 }
 
 .bamboo-enter-your-pledge .pledge-amount-container, .bamboo-enter-your-pledge .pledge-amount, .black-enter-your-pledge .pledge-amount-container, .black-enter-your-pledge .pledge-amount {
+  text-align: right;
   margin-left: auto;
   margin-right: 12px;
   width: 90px;
@@ -554,7 +559,6 @@ footer {
   border-radius: 20px;
   color: black;
   font-weight: 700;
-  text-align: center;
 }
 
 .bamboo-enter-your-pledge .pledge-amount, .black-enter-your-pledge .pledge-amount {
@@ -698,5 +702,164 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 675px) {
+  .top {
+    width: 385px;
+    height: 300px;
+    background: url("images/image-hero-mobile.jpg") no-repeat center;
+    background-size: auto 300px;
+  }
+  .top .logo {
+    padding-top: 30px;
+    padding-left: 25px;
+  }
+  .top .hamburger {
+    display: block;
+    width: 17px;
+    height: 17px;
+    margin-right: 25px;
+    margin-top: 30px;
+  }
+  .top .menu-container {
+    display: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+  }
+  .top .menu-container img {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    right: 25px;
+    top: 23px;
+  }
+  .top .menu-container .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin-top: 80px;
+    background-color: white;
+    padding-top: 0;
+    border-radius: 8px;
+  }
+  .top .menu-container .menu li {
+    color: black;
+    width: 317px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-left: 25px;
+  }
+  .top .menu-container .menu li:nth-child(2) {
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .top .menu-container .menu li:nth-child(1) {
+    padding-top: 10px;
+  }
+  .top .menu-container .menu li:nth-child(3) {
+    padding-bottom: 10px;
+  }
+  .content {
+    height: 2300px;
+    width: 375px;
+  }
+  .content .bookmark {
+    display: none;
+    padding: 0;
+  }
+  .content .bookmark-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .content .bookmark-image {
+    position: static;
+  }
+  .container {
+    width: 340px;
+    top: -55px;
+  }
+  .title, .progress, .bottom-container {
+    padding: 30px;
+  }
+  .modal-container {
+    width: 375px;
+  }
+  .title {
+    height: 200px;
+    text-align: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .title h1 {
+    padding-top: 20px;
+  }
+  .progress .stats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .progress .stats div {
+    text-align: center;
+  }
+  .progress .stats div:nth-child(1) {
+    padding-right: 0;
+    padding-bottom: 15px;
+  }
+  .progress .stats div:nth-child(2), .progress .stats div:nth-child(3) {
+    padding-right: 0;
+    padding-left: 0;
+    border-left-width: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px #b6b6b6 solid;
+  }
+  .pledge-box-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    line-height: 25px;
+  }
+  .pledge-box-top h1 {
+    font-size: .8rem;
+  }
+  .pledge-box-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .pledge-box-bottom .pledges-left {
+    padding-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
