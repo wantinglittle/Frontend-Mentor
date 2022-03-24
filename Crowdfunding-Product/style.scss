@@ -7,6 +7,19 @@ $light-gray: rgb(247, 247, 247);
 $medium-gray: rgb(182, 182, 182);
 $lt-medium-gray: rgb(228, 228, 228);
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin-right: 15px;
+}
+
+@mixin simple-text {
+    font-size: .9rem;
+    color: $medium-gray;
+    font-weight: 500;
+
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -158,6 +171,7 @@ body {
     display: flex;
     justify-content: start;
     flex-direction: column;
+    border-radius: 8px;
     .stats {
         display: flex;
         h1 {
@@ -201,6 +215,9 @@ body {
 
 
 // Bottom box section
+.bottom-container{
+    border-radius: 8px;
+}
 .about, .bamboo, .black, .mahogany{
     h1 {
         font-size: 1.2rem;
@@ -279,20 +296,22 @@ footer {
 // -------------- M O D A L --------------
 
 .modal-container {
-    height: 100vh;
-    width: 100%;
+    height: 98vh;
+    width: 788px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: absolute;
+    position: fixed;
     opacity: 0;
     pointer-events: none;
     :hover input, label {
         cursor: pointer;
     }
+    overflow: auto;   
+    margin-top: 10px;
 }
 
 .modal, .modal form {
+    box-sizing: content-box;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -303,18 +322,14 @@ footer {
     background-color: white;
     border-radius: 12px;
     padding: 10px 50px 50px 50px;
-    margin-top: 30px;
-    gap: 25px;
+    gap: 15px;
     h1, p {
         align-self: flex-start;
     }
-    
 }
 
-.modal-box, .modal-mahogany {
-    border-style: solid;
-    border-width: 1px;
-    border-color: $lt-medium-gray;
+.modal-no-pledge, .modal-bamboo, .modal-black, .modal-mahogany {
+    border: 1px solid $lt-medium-gray;
     border-radius: 6px;
 }
 
@@ -412,5 +427,140 @@ footer {
     }
 }
 
+.bamboo-enter-your-pledge, .black-enter-your-pledge {
+    display: none;
+    align-items: center;
+    margin-top: 20px;
+    height: 98px;
+    width: 100%;
+    p {
+        @include simple-text;
+        padding-top: 40px;
+        padding-left: 20px;
+    }
+    .pledge-amount-container, .pledge-amount {
+        margin-left: auto;
+        margin-right: 12px;
+        width: 90px;
+        height: 48px;
+        background-color: white;
+        border-radius: 20px;
+        color: black;
+        font-weight: 700;
+        text-align: center;
+    }
+    .pledge-amount {
+        border: 1px $lt-medium-gray solid;
+    }
+    .pledge-amount-container:focus {
+        border: none;
+    }
+    .pledge-amount:focus, .pledge-amount:hover {
+        border: 1px $cyan solid;
+        outline: none;
+    }
+    .continue {
+        margin-right: 26px;
+        border: none;
+        width: 100px;
+        height: 48px;
+        background-color: $cyan;
+        border-radius: 20px;
+        color: white;
+        font-weight: 500;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    .pledge-amount-container {
+        position: relative;
+    }
+    .dollar-sign {
+        position: absolute;
+        top: -23px;
+        left: -5px;
+    }
+    .continue:hover {
+        background-color: $dark-cyan;
+    }
+}
 
+.no-pledge-enter {
+    display: none;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+    height: 85px;
+    width: 100%;
+    .continue {
+        margin-right: 26px;
+        border: none;
+        width: 100px;
+        height: 48px;
+        background-color: $cyan;
+        border-radius: 20px;
+        color: white;
+        font-weight: 500;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    .continue:hover {
+        background-color: $dark-cyan;
+    }
+}
 
+.enter-your-pledge-appear {
+    display: flex;
+}
+.add-container-border {
+    border: 2px $cyan solid;
+    border-radius: 6px;
+}
+
+.change-modal-box-border {
+    border: 0;
+    border-bottom: 1px $lt-medium-gray solid;
+    border-radius: 0px;
+}
+
+// -------------- Thanks box --------------
+
+.thanks-box {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 450px;
+    max-height: 70vh;
+    width: 540px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    background-color: white;
+    p {
+        @include simple-text;
+        font-size: 1.2rem;
+        line-height: 34px;
+        text-align: center;       
+    }
+    border-radius: 8px;
+    padding: 60px;
+    .got-it {
+        border: none;
+        width: 100px;
+        height: 48px;
+        background-color: $cyan;
+        border-radius: 20px;
+        color: white;
+        font-weight: 500;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    .got-it:hover {
+        background-color: $dark-cyan;
+    }
+}
+
+.show-thanks {
+    display: flex;
+}

@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin-right: 15px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -200,6 +206,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-radius: 8px;
 }
 
 .progress .stats {
@@ -248,6 +255,10 @@ body {
   height: 10px;
   width: 80%;
   border-radius: 10px;
+}
+
+.bottom-container {
+  border-radius: 8px;
 }
 
 .about h1, .bamboo h1, .black h1, .mahogany h1 {
@@ -345,20 +356,19 @@ footer {
 }
 
 .modal-container {
-  height: 100vh;
-  width: 100%;
+  height: 98vh;
+  width: 788px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
+  position: fixed;
   opacity: 0;
   pointer-events: none;
+  overflow: auto;
+  margin-top: 10px;
 }
 
 .modal-container :hover input, .modal-container label {
@@ -366,6 +376,8 @@ footer {
 }
 
 .modal, .modal form {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -385,8 +397,7 @@ footer {
   background-color: white;
   border-radius: 12px;
   padding: 10px 50px 50px 50px;
-  margin-top: 30px;
-  gap: 25px;
+  gap: 15px;
 }
 
 .modal h1, .modal p, .modal form h1, .modal form p {
@@ -394,10 +405,8 @@ footer {
       align-self: flex-start;
 }
 
-.modal-box, .modal-mahogany {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e4e4e4;
+.modal-no-pledge, .modal-bamboo, .modal-black, .modal-mahogany {
+  border: 1px solid #e4e4e4;
   border-radius: 6px;
 }
 
@@ -516,5 +525,178 @@ footer {
   font-weight: 500;
   padding-left: 50px;
   padding-top: 15px;
+}
+
+.bamboo-enter-your-pledge, .black-enter-your-pledge {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  height: 98px;
+  width: 100%;
+}
+
+.bamboo-enter-your-pledge p, .black-enter-your-pledge p {
+  font-size: .9rem;
+  color: #b6b6b6;
+  font-weight: 500;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.bamboo-enter-your-pledge .pledge-amount-container, .bamboo-enter-your-pledge .pledge-amount, .black-enter-your-pledge .pledge-amount-container, .black-enter-your-pledge .pledge-amount {
+  margin-left: auto;
+  margin-right: 12px;
+  width: 90px;
+  height: 48px;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bamboo-enter-your-pledge .pledge-amount, .black-enter-your-pledge .pledge-amount {
+  border: 1px #e4e4e4 solid;
+}
+
+.bamboo-enter-your-pledge .pledge-amount-container:focus, .black-enter-your-pledge .pledge-amount-container:focus {
+  border: none;
+}
+
+.bamboo-enter-your-pledge .pledge-amount:focus, .bamboo-enter-your-pledge .pledge-amount:hover, .black-enter-your-pledge .pledge-amount:focus, .black-enter-your-pledge .pledge-amount:hover {
+  border: 1px #3cb4ac solid;
+  outline: none;
+}
+
+.bamboo-enter-your-pledge .continue, .black-enter-your-pledge .continue {
+  margin-right: 26px;
+  border: none;
+  width: 100px;
+  height: 48px;
+  background-color: #3cb4ac;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.bamboo-enter-your-pledge .pledge-amount-container, .black-enter-your-pledge .pledge-amount-container {
+  position: relative;
+}
+
+.bamboo-enter-your-pledge .dollar-sign, .black-enter-your-pledge .dollar-sign {
+  position: absolute;
+  top: -23px;
+  left: -5px;
+}
+
+.bamboo-enter-your-pledge .continue:hover, .black-enter-your-pledge .continue:hover {
+  background-color: #147b74;
+}
+
+.no-pledge-enter {
+  display: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  height: 85px;
+  width: 100%;
+}
+
+.no-pledge-enter .continue {
+  margin-right: 26px;
+  border: none;
+  width: 100px;
+  height: 48px;
+  background-color: #3cb4ac;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.no-pledge-enter .continue:hover {
+  background-color: #147b74;
+}
+
+.enter-your-pledge-appear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.add-container-border {
+  border: 2px #3cb4ac solid;
+  border-radius: 6px;
+}
+
+.change-modal-box-border {
+  border: 0;
+  border-bottom: 1px #e4e4e4 solid;
+  border-radius: 0px;
+}
+
+.thanks-box {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 450px;
+  max-height: 70vh;
+  width: 540px;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 60px;
+}
+
+.thanks-box p {
+  font-size: .9rem;
+  color: #b6b6b6;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 34px;
+  text-align: center;
+}
+
+.thanks-box .got-it {
+  border: none;
+  width: 100px;
+  height: 48px;
+  background-color: #3cb4ac;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.thanks-box .got-it:hover {
+  background-color: #147b74;
+}
+
+.show-thanks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

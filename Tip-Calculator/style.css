@@ -199,7 +199,6 @@ input:hover, input:focus {
     color:hsl(184, 14%, 56%);
     background-color: hsl(183, 100%, 20%);
     text-decoration: none;
-    border: none;
     font-size: 1.2rem;
     color: hsl(183, 100%, 15%);
 }
