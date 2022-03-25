@@ -182,3 +182,12 @@ hamburger.addEventListener('click', () => {
     mobileMenu.style.display = ('flex')
     mobileMenu.style.brightness = ('100%')
 })
+
+closeMobile.addEventListener('click', () => {
+    content.classList.remove('content-dark')
+    topOne.classList.remove('content-dark')
+    closeMobile.style.display = ('none')
+    hamburger.style.display = ('block')
+    mobileMenu.style.display = ('none')
+    mobileMenu.style.brightness = ('100%')
+})
