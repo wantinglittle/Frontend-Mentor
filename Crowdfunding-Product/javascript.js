@@ -171,7 +171,7 @@ gotIt.addEventListener('click', () => {
 //  Mobile menu
 
 const hamburger = document.querySelector('.hamburger')
-const mobileMenu = document.querySelector('.menu-container')
+const mobileMenu = document.querySelector('.mobile-menu-container')
 const closeMobile = document.querySelector('.mobile-menu-close')
 
 hamburger.addEventListener('click', () => {
@@ -180,7 +180,8 @@ hamburger.addEventListener('click', () => {
     closeMobile.style.display = ('block')
     hamburger.style.display = ('none')
     mobileMenu.style.display = ('flex')
-    mobileMenu.style.brightness = ('100%')
+    mobileMenu.style.brightness = ('1')
+    mobileMenu.style.zIndex = ('5')
 })
 
 closeMobile.addEventListener('click', () => {

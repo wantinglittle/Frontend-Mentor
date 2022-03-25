@@ -573,7 +573,7 @@ footer {
 
 @media (max-width: 675px) {
     .top {
-        width: 385px;
+        width: 375px;
         height: 300px;
         background: url("images/image-hero-mobile.jpg") no-repeat center;
         background-size: auto 300px;
@@ -585,53 +585,8 @@ footer {
             display: block;
             width: 17px;
             height: 17px;
-            margin-right: 25px;
-            margin-top: 30px;
-        }
-        .menu-container {
-            display: none;
-            justify-content: center;
-            width: 100%;
-            position: fixed;
-            z-index: 10;
-            .mobile-menu-close {
-                position: fixed;
-                width: 15px;
-                height: 15px;
-                right: 25px;
-                top: 35px;
-            }
-            .menu {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                position: relative;
-                height: 200px;
-                width: 200px;
-                margin-top: 80px;
-                background-color: white;
-                padding-top: 0;
-                border-radius: 8px;
-                li {
-                    color: black;
-                    width: 317px;
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                    padding-left: 25px;
-                }
-                li:nth-child(2) {
-                    border-top: 1px solid $lt-medium-gray;
-                    border-bottom: 1px solid $lt-medium-gray;
-                    padding-top: 25px;
-                    padding-bottom: 25px;
-                }
-                li:nth-child(1) {
-                    padding-top: 10px;
-                }
-                li:nth-child(3) {
-                    padding-bottom: 10px;
-                }
-            }
+            margin-right: -135px;
+            margin-top: 35px;
         }
     }
     .content {
@@ -649,6 +604,9 @@ footer {
         .bookmark-image {
             position: static;
         }
+    }
+    .menu-container .menu {
+        display: none;
     }
     .container {
         width: 340px;
@@ -703,5 +661,44 @@ footer {
         .pledges-left {
             padding-bottom: 20px;
         }
+    }
+}
+
+.mobile-menu-container {
+    display: none;
+    width: 340px;
+    height: 215px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    top: 90px;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    .mobile-menu-close {
+        position: fixed;
+        width: 15px;
+        height: 15px;
+        right: 30px;
+        top: 35px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+    }
+    .about {
+        border-bottom: 1px solid $lt-medium-gray;
+        padding: 22px 0 22px 25px;
+    }
+    .get-started {
+        border-top: 1px solid $lt-medium-gray;
+        padding: 22px 0 22px 25px;
+    }
+    .discover {
+        padding-left: 25px;
     }
 }
