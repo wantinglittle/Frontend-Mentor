@@ -68,7 +68,7 @@ body {
   padding-left: 142px;
 }
 
-.hamburger {
+.hamburger, .mobile-menu-close {
   display: none;
 }
 
@@ -729,9 +729,9 @@ footer {
             justify-content: center;
     width: 100%;
     position: fixed;
-    z-index: 3;
+    z-index: 10;
   }
-  .top .menu-container img {
+  .top .menu-container .mobile-menu-close {
     position: fixed;
     width: 15px;
     height: 15px;

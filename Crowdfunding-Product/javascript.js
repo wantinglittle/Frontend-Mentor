@@ -167,3 +167,18 @@ gotIt.addEventListener('click', () => {
     totalBackers.textContent=(backers+1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     backers++
 })
+
+//  Mobile menu
+
+const hamburger = document.querySelector('.hamburger')
+const mobileMenu = document.querySelector('.menu-container')
+const closeMobile = document.querySelector('.mobile-menu-close')
+
+hamburger.addEventListener('click', () => {
+    content.classList.add('content-dark')
+    topOne.classList.add('content-dark')
+    closeMobile.style.display = ('block')
+    hamburger.style.display = ('none')
+    mobileMenu.style.display = ('flex')
+    mobileMenu.style.brightness = ('100%')
+})
