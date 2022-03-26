@@ -67,6 +67,13 @@ body {
 }
 .hamburger, .mobile-menu-close {
     display: none;
+    :hover {
+        cursor: pointer;
+    }
+}
+.hamburger:hover, .mobile-menu-close:hover {
+    cursor: pointer;
+    
 }
 
 .content {
@@ -313,7 +320,7 @@ footer {
     margin-top: 10px;
 }
 
-.modal, .modal form {
+.modal {
     box-sizing: content-box;
     position: relative;
     display: flex;
@@ -425,7 +432,6 @@ footer {
         color: $medium-gray;
         line-height: 24px;
         font-weight: 500;
-        padding-left: 50px;
         padding-top: 15px;
     }
 }
@@ -662,6 +668,86 @@ footer {
             padding-bottom: 20px;
         }
     }
+    .modal-container {
+        width: 355px;
+        height: 98vh;
+    }
+    .modal {
+        width: 330px;
+        height: 1500px;
+        padding: 10px 25px 25px 25px;
+    }
+    .modal-box {
+        height: 200px;
+        :nth-child(1) {
+            position: relative;
+            .text2, .text3 {
+                position: absolute;
+            }
+            .text2 {
+                top: 175px;
+            }
+            .text3 {
+                top: 178px;
+                left: 22px;
+                font-size: .7rem;
+            }
+            label {
+                :nth-child(3) {
+                position: absolute;
+                left: 45px;
+                top: -10px;
+                width: 200px;
+                font-size: .85rem;
+                }
+            }
+            .text1 {
+                position: absolute;
+                left: 45px;
+                top: 20px;
+                font-size: .85rem;
+                font-weight: 500;
+            }
+        }
+    }
+    .bamboo-enter-your-pledge, .black-enter-your-pledge {
+        display: flex;
+        width: 300px;
+        justify-content: center;
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 25px 80px;
+        p {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            align-self: center;
+            padding: 0;
+            text-align: center;
+        }
+        .pledge-amount-container, button {
+            grid-row: 2;
+        }
+        .dollar-sign {
+            top: 16px;
+            left: 15px;
+        }
+    }
+    .bamboo-container, .black-container {
+        padding-bottom: 15px;
+    }
+    .thanks-box {
+        // display: flex;
+        width: 300px;
+        height: 350px;
+        padding: 20px;
+        p {
+            font-size: .9rem;
+            text-align: center;
+            justify-self: center;
+        }
+        h1 {
+            font-size: 1.1rem;
+        }
+    }
 }
 
 .mobile-menu-container {
@@ -700,5 +786,9 @@ footer {
     }
     .discover {
         padding-left: 25px;
+    }
+    .modal-container {
+        width: 330px;
+        height: 1500px;
     }
 }

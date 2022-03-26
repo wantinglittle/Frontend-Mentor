@@ -72,6 +72,14 @@ body {
   display: none;
 }
 
+.hamburger :hover, .mobile-menu-close :hover {
+  cursor: pointer;
+}
+
+.hamburger:hover, .mobile-menu-close:hover {
+  cursor: pointer;
+}
+
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -379,7 +387,7 @@ footer {
   cursor: pointer;
 }
 
-.modal, .modal form {
+.modal {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   position: relative;
@@ -404,7 +412,7 @@ footer {
   gap: 15px;
 }
 
-.modal h1, .modal p, .modal form h1, .modal form p {
+.modal h1, .modal p {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
@@ -527,7 +535,6 @@ footer {
   color: #b6b6b6;
   line-height: 24px;
   font-weight: 500;
-  padding-left: 50px;
   padding-top: 15px;
 }
 
@@ -811,6 +818,96 @@ footer {
   .pledge-box-bottom .pledges-left {
     padding-bottom: 20px;
   }
+  .modal-container {
+    width: 355px;
+    height: 98vh;
+  }
+  .modal {
+    width: 330px;
+    height: 1500px;
+    padding: 10px 25px 25px 25px;
+  }
+  .modal-box {
+    height: 200px;
+  }
+  .modal-box :nth-child(1) {
+    position: relative;
+  }
+  .modal-box :nth-child(1) .text2, .modal-box :nth-child(1) .text3 {
+    position: absolute;
+  }
+  .modal-box :nth-child(1) .text2 {
+    top: 175px;
+  }
+  .modal-box :nth-child(1) .text3 {
+    top: 178px;
+    left: 22px;
+    font-size: .7rem;
+  }
+  .modal-box :nth-child(1) label :nth-child(3) {
+    position: absolute;
+    left: 45px;
+    top: -10px;
+    width: 200px;
+    font-size: .85rem;
+  }
+  .modal-box :nth-child(1) .text1 {
+    position: absolute;
+    left: 45px;
+    top: 20px;
+    font-size: .85rem;
+    font-weight: 500;
+  }
+  .bamboo-enter-your-pledge, .black-enter-your-pledge {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 300px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 150px 150px;
+        grid-template-columns: 150px 150px;
+    -ms-grid-rows: 25px 80px;
+        grid-template-rows: 25px 80px;
+  }
+  .bamboo-enter-your-pledge p, .black-enter-your-pledge p {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding: 0;
+    text-align: center;
+  }
+  .bamboo-enter-your-pledge .pledge-amount-container, .bamboo-enter-your-pledge button, .black-enter-your-pledge .pledge-amount-container, .black-enter-your-pledge button {
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  .bamboo-enter-your-pledge .dollar-sign, .black-enter-your-pledge .dollar-sign {
+    top: 16px;
+    left: 15px;
+  }
+  .bamboo-container, .black-container {
+    padding-bottom: 15px;
+  }
+  .thanks-box {
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+  }
+  .thanks-box p {
+    font-size: .9rem;
+    text-align: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .thanks-box h1 {
+    font-size: 1.1rem;
+  }
 }
 
 .mobile-menu-container {
@@ -864,5 +961,10 @@ footer {
 
 .mobile-menu-container .discover {
   padding-left: 25px;
+}
+
+.mobile-menu-container .modal-container {
+  width: 330px;
+  height: 1500px;
 }
 /*# sourceMappingURL=style.css.map */
