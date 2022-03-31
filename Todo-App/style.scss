@@ -82,6 +82,7 @@ body {
         position: relative;
     }
     .sun, .moon {
+        display: none;
         position: absolute;
         margin-top: -13px;
         height: 25px;

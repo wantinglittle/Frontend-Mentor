@@ -71,6 +71,7 @@ body {
 }
 
 .top .sun, .top .moon {
+  display: none;
   position: absolute;
   margin-top: -13px;
   height: 25px;
