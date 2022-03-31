@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js" defer></script>
+</head>
+<body id="body">
+  <div class="container">
+      <section class="top">
+        <div class="todo">Todo</div>
+        <div class="theme-toggle">
+          <img src="images/icon-moon.svg" alt="moon" class="moon">
+          <img src="images/icon-sun.svg" alt="sun" class="sun">
+        </div>
+      </section>
+      <section class="add-task">      
+        <form class="task-form">
+          <input type="text" class="task-input" id="task-input" maxlength="44" placeholder="Create a new todo...">
+          <button type="submit" class="submit" id="submit">submit</button>
+        </form>
+      </section>
+      <section class="list-of-tasks">
+        <div class="added-tasks-container">
+        </div>
+        <div class="options">
+          <div class="items-left">0 items left</div>
+          <div class="item-status">
+            <div class="all used-filter">All</div>
+            <div class="active unused-filter">Active</div>
+            <div class="completed unused-filter">Completed</div>
+          </div>
+          <div class="clear">Clear Completed</div>
+        </div>
+      </section>
+      <div class="drag-drop">Drag and drop to reorder list</div>
+  </div>
+
+  <footer class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/wantinglittle">Daniel</a>.
+  </footer>
+</body>
+</html>

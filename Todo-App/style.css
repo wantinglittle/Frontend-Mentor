@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin-right: 15px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+}
+
+* :hover button {
+  cursor: pointer;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 98vw;
+  height: 300px;
+  background: url("images/bg-desktop-light.jpg") no-repeat center;
+  background-size: cover;
+  background-color: #fafafa;
+}
+
+.container {
+  width: 540px;
+}
+
+.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 75px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.top .todo {
+  color: white;
+  font-size: 2rem;
+  max-height: 30px;
+  font-weight: 700;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+}
+
+.top .theme-toggle {
+  width: 27px;
+  position: relative;
+}
+
+.top .sun, .top .moon {
+  position: absolute;
+  margin-top: -13px;
+  height: 25px;
+  width: 25px;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.top .sun {
+  opacity: 0;
+  z-index: -3;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+  width: 100%;
+  color: #9394a5;
+  font-weight: 500;
+  background-color: white;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.options .items-left {
+  color: #9394a5;
+}
+
+.options .item-status {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.options .clear {
+  text-align: right;
+  color: #9394a5;
+  cursor: pointer;
+}
+
+.options .clear:hover {
+  color: #484b6a;
+}
+
+.options .items-left, .options .item-status div, .options .clear {
+  font-size: .85rem;
+}
+
+.options .all, .options .active, .options .completed {
+  cursor: pointer;
+}
+
+.used-filter {
+  color: #3a7bfd;
+}
+
+.used-filter:hover {
+  color: #3a7bfd;
+}
+
+.unused-filter {
+  color: #9394a5;
+}
+
+.unused-filter:hover {
+  color: #484b6a;
+}
+
+.options-adjust-border {
+  border-radius: 0 0 5px 5px;
+}
+
+.add-task {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.add-task .task-input {
+  padding: 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: black;
+}
+
+.add-task .submit {
+  display: none;
+}
+
+.list-of-tasks {
+  -webkit-box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
+          box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
+}
+
+.list-of-tasks .added-tasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  outline: none;
+  border: none;
+  color: black;
+  background-color: white;
+  border-bottom: 1px #d2d3db solid;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.list-of-tasks .added-tasks-container {
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+
+.list-of-tasks .added-tasks-container :hover {
+  cursor: pointer;
+}
+
+.list-of-tasks .x {
+  width: 20px;
+  height: 20px;
+}
+
+.list-of-tasks .added-task-text {
+  width: 320px;
+}
+
+.checkbox-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox-container label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+}
+
+.checkbox-container .task-checkbox {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  width: 200px;
+}
+
+.checkbox-container .revised-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 33px;
+  height: 26px;
+  margin-right: 15px;
+  margin-top: -2px;
+  border: 1px solid #d2d3db;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: white;
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+}
+
+.checkbox-container .revised-checkbox:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#57ddff), to(#c058f3));
+  background: linear-gradient(to right, #57ddff, #c058f3);
+}
+
+.checkbox-container .inner-checkbox {
+  width: 23px;
+  height: 22px;
+  position: absolute;
+  background: white;
+  border-radius: 100%;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.checkbox-container .task-checkbox:checked + .revised-checkbox::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.checkbox-container .revised-checkbox::after {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  content: url("images/icon-check.svg");
+  width: 26px;
+  height: 25px;
+  background: -webkit-gradient(linear, left top, right top, from(#57ddff), to(#c058f3));
+  background: linear-gradient(to right, #57ddff, #c058f3);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  border-radius: 100%;
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+}
+
+.line-out {
+  text-decoration: line-through;
+  color: #d2d3db;
+}
+
+.drag-drop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #9394a5;
+  font-size: .75rem;
+}
+
+.display-none {
+  position: absolute;
+  opacity: 0;
+  z-index: -5;
+}
+
+footer {
+  margin-top: 50px;
+  width: 540px;
+  text-align: center;
+  color: #484b6a;
+  font-size: .65rem;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: .75rem;
+}
+
+@media (max-width: 675px) {
+  .container {
+    width: 330px;
+  }
+  .top .todo {
+    font-size: 1.2rem;
+  }
+  .top .sun, .top .moon {
+    width: 20px;
+    height: 20px;
+    display: none;
+  }
+  .add-task .task-input {
+    font-size: .80rem;
+  }
+  .checkbox-container label div {
+    font-size: .75rem;
+  }
+  .list-of-tasks .items-left, .list-of-tasks .clear {
+    font-size: .80rem;
+  }
+  .item-status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 330px;
+    background-color: white;
+    border-radius: 5px;
+    height: 50px;
+    padding: 0 63px;
+    -webkit-box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+  .item-status .active {
+    margin: 0 20px;
+  }
+  .drag-drop {
+    margin-top: 120px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
