@@ -55,7 +55,8 @@ body {
     background: url("images/bg-desktop-light.jpg") no-repeat center;
     background-size: cover;
     background-color: $very-light-gray;
-    // transition: 200ms;
+    transition: background-image 200ms;
+    transition: background-color 200ms;
     
 }
 .container {

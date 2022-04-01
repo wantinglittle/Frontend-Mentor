@@ -35,6 +35,10 @@ body {
   background: url("images/bg-desktop-light.jpg") no-repeat center;
   background-size: cover;
   background-color: #fafafa;
+  -webkit-transition: background-image 200ms;
+  transition: background-image 200ms;
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
 }
 
 .container {

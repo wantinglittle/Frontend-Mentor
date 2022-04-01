@@ -47,11 +47,10 @@ submit.addEventListener('submit', (e) => {
     } else {itemsLeftText.innerText = itemsLeft + ' items left'}
 
 // when text is added, determine bg color based on light or dark theme
-    if (moon.style.opacity == 0){
+    if (moon.style.opacity === '0'){
         addTaskDiv.style.backgroundColor = 'hsl(235, 24%, 19%)'
         innerCheckbox.style.backgroundColor = 'hsl(235, 24%, 19%)'
-        checkboxContainer.style.color = 'white'
-        console.log(moon.style.opacity)
+        checkboxContainer.style.color = 'hsl(234, 39%, 85%)'
     }
 
 
@@ -170,6 +169,7 @@ const clearCompleted = document.querySelector('.clear')
 const body = document.getElementById('body')
 const taskForm = document.querySelector('.task-input')
 const taskForm2 = document.querySelector('.task-form')
+const checkboxContainer = document.querySelector('.checkbox-container')
 
 sun.addEventListener('click', () => {
     const addTaskDiv = document.querySelectorAll('.added-tasks')
@@ -183,7 +183,8 @@ sun.addEventListener('click', () => {
     options.style.backgroundColor = 'white'
     taskForm.style.backgroundColor = 'white'
     taskForm.style.color = 'black'
-    taskForm2.style.backgroundColor = 'white'
+    // taskForm2.style.backgroundColor = 'white'
+    // checkboxContainer.style.color = 'black'
     addTaskDiv.forEach((bg) => {
         bg.style.backgroundColor='white'
         bg.style.color = 'black'
@@ -204,8 +205,8 @@ moon.addEventListener('click', () => {
     body.style.backgroundColor = 'hsl(235, 21%, 11%)'
     options.style.backgroundColor = 'hsl(235, 24%, 19%)'
     taskForm.style.backgroundColor = 'hsl(235, 24%, 19%)'
-    taskForm.style.color = 'white'
-    taskForm2.style.backgroundColor = 'hsl(235, 24%, 19%)'
+    taskForm.style.color = 'hsl(234, 39%, 85%)'
+    // taskForm2.style.backgroundColor = 'hsl(235, 24%, 19%)'
     addedTasks.style.backgroundColor = 'hsl(235, 24%, 19%)'
     addTaskDiv.forEach((color) => {
         color.style.backgroundColor='hsl(235, 24%, 19%)'
