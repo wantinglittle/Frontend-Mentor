@@ -71,7 +71,6 @@ body {
 }
 
 .top .sun, .top .moon {
-  display: none;
   position: absolute;
   margin-top: -13px;
   height: 25px;
@@ -164,18 +163,31 @@ body {
   margin-bottom: 20px;
   -webkit-transition: 200ms;
   transition: 200ms;
+  position: relative;
 }
 
 .add-task .task-input {
-  padding: 20px;
+  padding: 22px 20px 20px 65px;
   border-radius: 5px;
   outline: none;
   border: none;
   color: black;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
 .add-task .submit {
   display: none;
+}
+
+.add-task .circle {
+  position: absolute;
+  border: 1px solid #cacde8;
+  border-radius: 100%;
+  width: 26px;
+  height: 26px;
+  top: 16px;
+  left: 20px;
 }
 
 .list-of-tasks {
@@ -225,20 +237,20 @@ body {
 }
 
 .checkbox-container label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
+  width: 470px;
 }
 
 .checkbox-container .task-checkbox {
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  width: 200px;
+  width: 30px;
 }
 
 .checkbox-container .revised-checkbox {
@@ -252,9 +264,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 33px;
-  height: 26px;
-  margin-right: 15px;
+  width: 29px;
+  height: 27px;
+  margin-right: 19px;
   margin-top: -2px;
   border: 1px solid #d2d3db;
   border-radius: 100%;
@@ -273,7 +285,7 @@ body {
 
 .checkbox-container .inner-checkbox {
   width: 23px;
-  height: 22px;
+  height: 24px;
   position: absolute;
   background: white;
   border-radius: 100%;
@@ -299,8 +311,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   content: url("images/icon-check.svg");
-  width: 26px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   background: -webkit-gradient(linear, left top, right top, from(#57ddff), to(#c058f3));
   background: linear-gradient(to right, #57ddff, #c058f3);
   -webkit-transform: scale(0);
@@ -338,6 +350,7 @@ body {
 footer {
   margin-top: 50px;
   width: 540px;
+  margin-bottom: auto;
   text-align: center;
   color: #484b6a;
   font-size: .65rem;
