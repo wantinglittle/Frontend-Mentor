@@ -5,6 +5,7 @@ const options = document.querySelector('.options')
 const itemsLeftText = document.querySelector('.items-left')
 const sun = document.querySelector('.sun')
 const moon = document.querySelector('.moon')
+// let eachTask = document.querySelectorAll('.added-tasks')
 
 let itemsLeft = 0
 
@@ -15,6 +16,7 @@ submit.addEventListener('submit', (e) => {
         alert('you must enter a task');
         return;
     }
+
 
 // add checkbox button to the left of the text
     const addTaskDiv = document.createElement('div')
@@ -27,6 +29,7 @@ submit.addEventListener('submit', (e) => {
 
 // add text of task
     addedTasks.appendChild(addTaskDiv)
+    addTaskDiv.setAttribute('draggable', 'true')
     addTaskDiv.classList.add('added-tasks')
     addTaskDiv.classList.add('active-filter')
     addTaskDiv.appendChild(checkboxContainer)
@@ -91,6 +94,7 @@ submit.addEventListener('submit', (e) => {
     
 // adjust top border radius of bottom filter menu
     options.classList.add('options-adjust-border')
+
 
 })
 
@@ -170,6 +174,7 @@ const body = document.getElementById('body')
 const taskForm = document.querySelector('.task-input')
 const taskForm2 = document.querySelector('.task-form')
 const checkboxContainer = document.querySelector('.checkbox-container')
+const itemStatus = document.querySelector('.item-status')
 
 sun.addEventListener('click', () => {
     const addTaskDiv = document.querySelectorAll('.added-tasks')
@@ -180,14 +185,13 @@ sun.addEventListener('click', () => {
     moon.style.zIndex = 3
     body.style.backgroundImage = `url('images/bg-desktop-light.jpg')`
     body.style.backgroundColor = 'hsl(0, 0%, 98%)'
+    itemStatus.style.backgroundColor = 'white'
     options.style.backgroundColor = 'white'
     taskForm.style.backgroundColor = 'white'
     taskForm.style.color = 'black'
-    // taskForm2.style.backgroundColor = 'white'
-    // checkboxContainer.style.color = 'black'
     addTaskDiv.forEach((bg) => {
-        bg.style.backgroundColor='white'
-        bg.style.color = 'black'
+        bg.style.backgroundColor=''
+        bg.style.color = ''
     })
     innerCheckbox.forEach((color) => {
         color.style.backgroundColor = 'white'
@@ -203,10 +207,10 @@ moon.addEventListener('click', () => {
     sun.style.zIndex = 3
     body.style.backgroundImage = `url('images/bg-desktop-dark.jpg')`
     body.style.backgroundColor = 'hsl(235, 21%, 11%)'
+    itemStatus.style.backgroundColor = 'hsl(235, 24%, 19%)'
     options.style.backgroundColor = 'hsl(235, 24%, 19%)'
     taskForm.style.backgroundColor = 'hsl(235, 24%, 19%)'
     taskForm.style.color = 'hsl(234, 39%, 85%)'
-    // taskForm2.style.backgroundColor = 'hsl(235, 24%, 19%)'
     addedTasks.style.backgroundColor = 'hsl(235, 24%, 19%)'
     addTaskDiv.forEach((color) => {
         color.style.backgroundColor='hsl(235, 24%, 19%)'
@@ -216,3 +220,45 @@ moon.addEventListener('click', () => {
         color.style.backgroundColor = 'hsl(235, 24%, 19%)'
     })
 })
+
+// Make tasks draggable
+
+const addedTasksContainer = document.querySelector('.added-tasks-container')
+
+addedTasksContainer.addEventListener('mousedown', () => {
+    let eachTask = document.querySelectorAll('.added-tasks')
+    const lastChild = addedTasksContainer.lastElementChild
+    const allButLast = document.querySelectorAll('.added-tasks:not(.added-tasks:last-child)')
+
+    eachTask.forEach(draggable => {
+        draggable.addEventListener('dragstart', () => {
+            draggable.classList.add('draggable')
+        })
+        draggable.addEventListener('dragend', () => {
+            draggable.classList.remove('draggable')
+        })
+    })
+
+    eachTask.forEach(insert => {
+        insert.addEventListener('dragover', (d) => {
+            const draggedItem = document.querySelector('.draggable')
+            insert.parentNode.insertBefore(draggedItem, insert)
+        })
+    })
+    
+    const options = document.querySelector('.options')
+    options.addEventListener('dragover', () => {
+        const draggedItem = document.querySelector('.draggable')
+        addedTasksContainer.append(draggedItem)
+    })
+
+})
+
+
+
+
+
+
+
+
+
