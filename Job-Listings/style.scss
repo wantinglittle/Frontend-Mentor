@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+// ### Primary
+
+$dark-cyan: hsl(180, 29%, 50%);
+
+// ### Neutral
+
+$light-grayish-cyan-bg: hsl(180, 52%, 96%); //(Background)
+$light-grayish-cyan: hsl(180, 31%, 95%); //(Filter Tablets)
+$dark-grayish-cyan: hsl(180, 8%, 52%);
+$very-dark-grayish-cyan: hsl(180, 14%, 20%);
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin-right: 15px;
+}
+
+// @mixin simple-text {
+    
+// }
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    :hover button {
+        cursor: pointer;
+    }
+}
+
+body {
+    background-color: black;
+    width: 100%;
+    height: calc(100% - 150px);
+    text-align: center;
+}
+
+header {
+    height: 150px;
+    width: 100%;
+    max-width: 1440px;
+    background: url('images/bg-header-desktop.svg') center;
+    background-color: $dark-cyan;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px - 20px);
+    width: 100%;
+    max-width: 1440px;
+    padding-top: 80px;
+    background-color: $light-grayish-cyan-bg;
+
+    .job-listing {
+        display: flex;
+        align-items: center;
+        width: 1115px;
+        height: 150px;
+        padding: 15px;
+        background-color: white;
+        margin-bottom: 23px;
+        border-radius: 5px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+        .logo {
+            width: 90px;
+            height: 90px;
+        }
+        .col-one {
+            width: 150px;
+            padding-left: 20px;
+        }
+        .col-two {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            height: 90px;
+            width: fit-content;
+            padding-left: 5px;
+            .company-name {
+                display: flex;
+                align-items: center;
+                color: $dark-cyan;
+                font-weight: 700;
+                .new {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 15px;
+                    font-size: .7em;
+                    background-color: $dark-cyan;
+                    color: white;
+                    font-weight: 500;
+                    padding: 7px 8px 4px 8px;
+                    border-radius: 20px;
+                }
+                .featured {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 8px;
+                    font-size: .7em;
+                    background-color: black;
+                    color: white;
+                    font-weight: 500;
+                    padding: 7px 8px 4px 8px;
+                    border-radius: 20px;
+                }
+            }
+            .job-title {
+                font-size: 1.3em;
+                font-weight: 700;
+            }
+            .other-info {
+                color: $dark-grayish-cyan;
+                font-size: 1.1em;
+            }
+        }
+        .col-three {
+            margin-left: auto;
+            margin-right: 25px;
+            display: flex;
+            .languages-container, .tools-container {
+                display: flex;
+            }
+            .role, .level, .languages, .tools {
+                background-color: $light-grayish-cyan-bg;
+                padding: 9px 8px 7px 8px;
+                border-radius: 5px;
+                margin-left: 20px;
+                color: $dark-cyan;
+                font-weight: 700;
+                font-size: .8em;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.left-bar {
+    border-left: 6px solid $dark-cyan;
+}
+
+.no-display {
+    opacity: 0;
+    position: absolute;
+}
+
+footer {
+    background-color: $light-grayish-cyan-bg;
+}
+
