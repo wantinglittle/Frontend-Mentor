@@ -18,6 +18,11 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
+* :hover {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -160,6 +165,11 @@ header {
 .container .job-listing .col-two .job-title {
   font-size: 1.3em;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.container .job-listing .col-two .job-title:hover {
+  color: #5ba4a4;
 }
 
 .container .job-listing .col-two .other-info {
@@ -181,6 +191,11 @@ header {
   display: flex;
 }
 
+.container .job-listing .col-three .languages-container div:hover, .container .job-listing .col-three .tools-container div:hover {
+  background-color: #5ba4a4;
+  color: #effafa;
+}
+
 .container .job-listing .col-three .role, .container .job-listing .col-three .level, .container .job-listing .col-three .languages, .container .job-listing .col-three .tools {
   background-color: #effafa;
   padding: 9px 8px 7px 8px;
@@ -190,6 +205,11 @@ header {
   font-weight: 700;
   font-size: .8em;
   cursor: pointer;
+}
+
+.container .job-listing .col-three div:nth-child(1):hover, .container .job-listing .col-three div:nth-child(2):hover {
+  background-color: #5ba4a4;
+  color: #effafa;
 }
 
 .left-bar {

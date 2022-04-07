@@ -30,6 +30,9 @@ input::-webkit-inner-spin-button {
     :hover button {
         cursor: pointer;
     }
+    :hover {
+        transition: 200ms;
+    }
 }
 
 body {
@@ -119,6 +122,10 @@ header {
             .job-title {
                 font-size: 1.3em;
                 font-weight: 700;
+                cursor: pointer;
+            }
+            .job-title:hover {
+                color: $dark-cyan;
             }
             .other-info {
                 color: $dark-grayish-cyan;
@@ -131,6 +138,10 @@ header {
             display: flex;
             .languages-container, .tools-container {
                 display: flex;
+                div:hover {
+                    background-color: $dark-cyan;
+                    color: $light-grayish-cyan-bg;
+                }
             }
             .role, .level, .languages, .tools {
                 background-color: $light-grayish-cyan-bg;
@@ -141,6 +152,10 @@ header {
                 font-weight: 700;
                 font-size: .8em;
                 cursor: pointer;
+            }
+            div:nth-child(1):hover, div:nth-child(2):hover {
+                background-color: $dark-cyan;
+                color: $light-grayish-cyan-bg;
             }
         }
     }
