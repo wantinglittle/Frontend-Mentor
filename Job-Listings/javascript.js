@@ -74,20 +74,56 @@ fetch("data.json")
         container.innerHTML += item
         
     }        
+    
+    // Cause filter container to appear
+    const filterContainerAppear = () => {
+      document.querySelector('.filter-container').style.display = 'flex'
+    }
+    // Cause filter container to disappear
+    const filterContainerDisappear = () => {
+      document.querySelector('.filter-container').style.display = 'none'
+    }
+    
+    // Decrementing list by clicking a role
     let role = document.querySelectorAll('.role')
     role.forEach(roleButton => {
       roleButton.addEventListener('click', () => {
+        filterContainerAppear()
+        const filterName=roleButton.innerHTML
+        document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
         role.forEach(x => {
-          if(x.class !== roleButton.class) {
-            roleButton.parentNode.parentNode.classList.add('no-display')
+          if(x.innerHTML !== roleButton.innerHTML) {
+            x.parentNode.parentNode.classList.add('no-display')
           }
         })
-        
       })
     })
 
+    // Decrementing list by clicking a level
+    let level = document.querySelectorAll('.level')
+    level.forEach(levelButton => {
+      levelButton.addEventListener('click', () => {
+        filterContainerAppear()
+        level.forEach(x => {
+          if(x.innerHTML !== levelButton.innerHTML) {
+            x.parentNode.parentNode.classList.add('no-display')
+          }
+        })
+      })
+    })
 
+    
 
+    // program 'clear' button
+    const clear = document.querySelector('.clear')
+    clear.addEventListener('click', () => {
+      filterContainerDisappear()
+      const jobListings = document.querySelectorAll('.job-listing')
+      jobListings.forEach(x => {
+        x.classList.remove('no-display')
+      })
+
+    })
 
 
 })
