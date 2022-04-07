@@ -104,6 +104,8 @@ fetch("data.json")
     level.forEach(levelButton => {
       levelButton.addEventListener('click', () => {
         filterContainerAppear()
+        const filterName=levelButton.innerHTML
+        document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
         level.forEach(x => {
           if(x.innerHTML !== levelButton.innerHTML) {
             x.parentNode.parentNode.classList.add('no-display')
@@ -112,6 +114,51 @@ fetch("data.json")
       })
     })
 
+        // Decrementing list by clicking a language
+        let language = document.querySelectorAll('.languages')
+        language.forEach(langButton => {
+          langButton.addEventListener('click', () => {
+            filterContainerAppear()
+            const filterName=langButton.innerHTML
+            document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
+            let languageContainers = document.querySelectorAll('.languages-container')
+            languageContainers.forEach(lc => {
+              const children = lc.querySelectorAll('.languages')
+              let swtch = false
+              children.forEach(child => {
+                if(child.innerHTML == langButton.innerHTML) {
+                  swtch = true
+                }
+              })
+              if(swtch==false) {
+                lc.parentNode.parentNode.classList.add('no-display')
+              }
+            })
+          })
+        })
+
+        // Decrementing list by clicking a tool
+        let tool = document.querySelectorAll('.tools')
+        tool.forEach(toolButton => {
+          toolButton.addEventListener('click', () => {
+            filterContainerAppear()
+            const filterName=toolButton.innerHTML
+            document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
+            let toolsContainers = document.querySelectorAll('.tools-container')
+            toolsContainers.forEach(tc => {
+              const children = tc.querySelectorAll('.tools')
+              let swtch = false
+              children.forEach(child => {
+                if(child.innerHTML == toolButton.innerHTML) {
+                  swtch = true
+                }
+              })
+              if(swtch==false) {
+                tc.parentNode.parentNode.classList.add('no-display')
+              }
+            })
+          })
+        })
     
 
     // program 'clear' button
@@ -119,8 +166,12 @@ fetch("data.json")
     clear.addEventListener('click', () => {
       filterContainerDisappear()
       const jobListings = document.querySelectorAll('.job-listing')
+      const filter = document.querySelectorAll('.filter')
       jobListings.forEach(x => {
         x.classList.remove('no-display')
+      filter.forEach(y => {
+        y.style.display = 'none'
+      })
       })
 
     })
