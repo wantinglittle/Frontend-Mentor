@@ -177,6 +177,67 @@ fetch("data.json")
     })
 
 
+    // Program 'x' buttons on the filters
+    const closeButton = document.querySelectorAll('.x')
+    
+    closeButton.forEach(cb => {
+      cb.addEventListener('click', () => {
+        
+        // remove that filter box
+        cb.parentNode.style.display = 'none' 
+
+        // remove the filter container if the filter removed was the only filter displaying
+        let filter = document.querySelectorAll('.filter')
+        let filterContainerSwitch = 0
+        filter.forEach(f => {
+        if (window.getComputedStyle(f).display == 'flex') {
+          filterContainerSwitch=1
+          }
+        })
+        if (filterContainerSwitch!=1) {
+        filterContainerDisappear()
+        }
+
+        // redisplay job listings that are no longer filtered out
+          //start by creating concatenated string for each job listing of all of the filter items
+        let jobListing = document.querySelectorAll('.job-listing')
+        jobListing.forEach(x => {
+          let role = x.querySelector('.role').innerHTML
+          let level = x.querySelector('.level').innerHTML
+          let tools = x.querySelectorAll('.tools')
+          let toolsConcat
+          tools.forEach(tool => {
+            toolsConcat+=tool.innerHTML.trim().toLowerCase()
+          })
+          let languages = x.querySelectorAll('.languages')
+          let langConcat
+          languages.forEach(lang => {
+            langConcat+=lang.innerHTML.trim().toLowerCase()
+          })
+          let concat=role.trim().toLowerCase()+level.trim().toLowerCase()+toolsConcat+langConcat
+
+          // search all of the active filters against each concatenated job listing
+          let filter = document.querySelectorAll('.filter-name')
+          let jlswitch = 0
+          filter.forEach(filter => {
+            if (filter.parentNode.style.display == 'flex') {
+              if(concat.search(filter.innerHTML.toLocaleLowerCase()) !== -1) {
+                jlswitch = 1
+              }
+            }
+          })
+          if (jlswitch==0) {
+            x.classList.remove('no-display')
+          }
+          
+          
+
+        })
+      })
+    })
+
+
+
 })
 
 

@@ -288,10 +288,13 @@ header {
 .filter-container .clear {
   margin-left: auto;
   color: #5ba4a4;
-  text-decoration: underline;
   font-weight: 700;
   font-size: .9em;
   cursor: pointer;
+}
+
+.filter-container .clear:hover {
+  text-decoration: underline;
 }
 
 footer {
