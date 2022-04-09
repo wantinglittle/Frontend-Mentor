@@ -7,15 +7,18 @@ body {
     margin: 0px;
     width: 100%;
     height: 100vh;
-    font-family: 'Raleway', sans-serif;;
-    background: url(images/bg.jpg) center no-repeat lightgray;
-    background-size: 1000px 150vh;
-    
+    font-family: 'Raleway', sans-serif;
+    background-color: lavender;
 }
 
 .container {
-    width: 700px;
-    margin-top: 100px;
+    background: url(images/bg.jpg) center no-repeat lavender;
+    background-size: 70vw 100%; 
+    width: 60vw;
+    min-width: 350px;
+    padding-top: 85px;
+    padding-left: 60px;
+    overflow: hidden;
 }
 
 .links {
