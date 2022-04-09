@@ -243,7 +243,6 @@ fetch("data.json")
               }
             }
           })
-          console.log(jlswitch)
           if (jlswitch==0) {
             x.classList.remove('no-display')
           }
