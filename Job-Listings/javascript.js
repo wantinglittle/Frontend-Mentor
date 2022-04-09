@@ -57,14 +57,14 @@ fetch("data.json")
             </div>
             <div class='col-three'>
               <div class="role">
-               ${data[i].role}
+                ${data[i].role}
               </div>
               <div class="level">
-               ${data[i].level}
+                ${data[i].level}
               </div>
               <div class="languages-container">` +
                 languages  +
-             `</div>
+              `</div>
               <div class="tools-container">` +
                 tools +
               `</div>
@@ -75,13 +75,26 @@ fetch("data.json")
         
     }        
     
+    const changeContainerTopPadding = () => {
+      let fc = document.querySelector('.filter-container')
+      let bc = document.querySelector('.container')
+      if (fc.offsetHeight>75){
+        bc.style.paddingTop = fc.offsetHeight + 25 + 'px'
+      } else {
+        bc.style.paddingTop = '80px'
+      }
+    }
+
     // Cause filter container to appear
     const filterContainerAppear = () => {
-      document.querySelector('.filter-container').style.display = 'flex'
+      let fc = document.querySelector('.filter-container')
+      fc.style.display = 'flex'
     }
+
     // Cause filter container to disappear
     const filterContainerDisappear = () => {
-      document.querySelector('.filter-container').style.display = 'none'
+      let fc = document.querySelector('.filter-container')
+      fc.style.display = 'none'
     }
     
     // Decrementing list by clicking a role
@@ -96,6 +109,7 @@ fetch("data.json")
             x.parentNode.parentNode.classList.add('no-display')
           }
         })
+        changeContainerTopPadding()
       })
     })
 
@@ -111,54 +125,57 @@ fetch("data.json")
             x.parentNode.parentNode.classList.add('no-display')
           }
         })
+        changeContainerTopPadding()
       })
     })
 
-        // Decrementing list by clicking a language
-        let language = document.querySelectorAll('.languages')
-        language.forEach(langButton => {
-          langButton.addEventListener('click', () => {
-            filterContainerAppear()
-            const filterName=langButton.innerHTML
-            document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
-            let languageContainers = document.querySelectorAll('.languages-container')
-            languageContainers.forEach(lc => {
-              const children = lc.querySelectorAll('.languages')
-              let swtch = false
-              children.forEach(child => {
-                if(child.innerHTML == langButton.innerHTML) {
-                  swtch = true
-                }
-              })
-              if(swtch==false) {
-                lc.parentNode.parentNode.classList.add('no-display')
-              }
-            })
+    // Decrementing list by clicking a language
+    let language = document.querySelectorAll('.languages')
+    language.forEach(langButton => {
+      langButton.addEventListener('click', () => {
+        filterContainerAppear()
+        const filterName=langButton.innerHTML
+        document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
+        let languageContainers = document.querySelectorAll('.languages-container')
+        languageContainers.forEach(lc => {
+          const children = lc.querySelectorAll('.languages')
+          let swtch = false
+          children.forEach(child => {
+            if(child.innerHTML == langButton.innerHTML) {
+              swtch = true
+            }
           })
+          if(swtch==false) {
+            lc.parentNode.parentNode.classList.add('no-display')
+          }
         })
+        changeContainerTopPadding()
+      })
+    })
 
-        // Decrementing list by clicking a tool
-        let tool = document.querySelectorAll('.tools')
-        tool.forEach(toolButton => {
-          toolButton.addEventListener('click', () => {
-            filterContainerAppear()
-            const filterName=toolButton.innerHTML
-            document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
-            let toolsContainers = document.querySelectorAll('.tools-container')
-            toolsContainers.forEach(tc => {
-              const children = tc.querySelectorAll('.tools')
-              let swtch = false
-              children.forEach(child => {
-                if(child.innerHTML == toolButton.innerHTML) {
-                  swtch = true
-                }
-              })
-              if(swtch==false) {
-                tc.parentNode.parentNode.classList.add('no-display')
-              }
-            })
+    // Decrementing list by clicking a tool
+    let tool = document.querySelectorAll('.tools')
+    tool.forEach(toolButton => {
+      toolButton.addEventListener('click', () => {
+        filterContainerAppear()
+        const filterName=toolButton.innerHTML
+        document.querySelector(`[data-name="${filterName.trim().toLowerCase()}"]`).style.display = 'flex'
+        let toolsContainers = document.querySelectorAll('.tools-container')
+        toolsContainers.forEach(tc => {
+          const children = tc.querySelectorAll('.tools')
+          let swtch = false
+          children.forEach(child => {
+            if(child.innerHTML == toolButton.innerHTML) {
+              swtch = true
+            }
           })
+          if(swtch==false) {
+            tc.parentNode.parentNode.classList.add('no-display')
+          }
         })
+        changeContainerTopPadding()
+      })
+    })
     
 
     // program 'clear' button
@@ -173,7 +190,7 @@ fetch("data.json")
         y.style.display = 'none'
       })
       })
-
+      changeContainerTopPadding()
     })
 
 
@@ -221,11 +238,12 @@ fetch("data.json")
           let jlswitch = 0
           filter.forEach(filter => {
             if (filter.parentNode.style.display == 'flex') {
-              if(concat.search(filter.innerHTML.toLocaleLowerCase()) !== -1) {
+              if(concat.search(filter.innerHTML.toLowerCase()) == -1) {
                 jlswitch = 1
               }
             }
           })
+          console.log(jlswitch)
           if (jlswitch==0) {
             x.classList.remove('no-display')
           }
@@ -233,6 +251,7 @@ fetch("data.json")
           
 
         })
+        changeContainerTopPadding()
       })
     })
 
