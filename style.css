@@ -11,21 +11,39 @@ body {
   width: 100%;
   height: 100vh;
   font-family: 'Raleway', sans-serif;
-  background-color: lavender;
+  background-color: #cecef6;
 }
 
 .container {
-  background: url(images/bg.jpg) center no-repeat lavender;
+  background: url(images/bg.jpg) center no-repeat #cecef6;
   background-size: 70vw 100%;
   width: 60vw;
   min-width: 350px;
   padding-top: 85px;
-  padding-left: 100px;
+  padding-left: 70px;
+  padding-right: 70px;
   overflow: hidden;
 }
 
 .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-size: 1.7rem;
+}
+
+.links .right-col {
+  padding-left: 20px;
+}
+
+.links .left-col {
+  width: 320px;
+  padding-left: 20px;
 }
 
 a {
@@ -39,7 +57,7 @@ a {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  margin-top: 7px;
+  margin-top: 17px;
   -webkit-transition: ease-in-out;
   transition: ease-in-out;
   -webkit-transition-duration: 100ms;

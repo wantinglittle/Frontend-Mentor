@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+@use "light";
+
+// ### Theme 1
+
+// #### Backgrounds
+
+$very-dark-desaturated-blue-main-bg: hsl(222, 26%, 31%);
+$very-dark-desaturated-blue-toggle-bg: hsl(223, 31%, 20%); //also (keypad background)
+$very-dark-desaturated-blue-screen-bg: hsl(224, 36%, 15%);
+
+// #### Keys
+
+$desaturated-dark-blue-key-background: hsl(225, 21%, 49%);
+$desaturated-dark-blue-key-shadow: hsl(224, 28%, 35%);
+
+$red-key-background-toggle: hsl(6, 63%, 50%);
+$dark-red-key-shadow: hsl(6, 70%, 34%);
+
+$light-grayish-orange-key-background: hsl(30, 25%, 89%);
+$Grayish-orange-key-shadow: hsl(28, 16%, 65%);
+
+// #### Text
+
+$very-dark-grayish-blue: hsl(221, 14%, 31%);
+$white: hsl(0, 0, 100%);
+
+// ### Theme 2
+
+// #### Backgrounds
+
+$light-gray-main-background: hsl(0, 0%, 90%);
+$grayis-red-toggle-background-keypad-background: hsl(0, 5%, 81%);
+$very-light-gray-screen-background: hsl(0, 0%, 93%);
+
+// #### Keys
+
+$dark-moderate-cyan-key-background: hsl(185, 42%, 37%);
+$very-dark-cyan-key-shadow: hsl(185, 58%, 25%);
+
+$orange-key-background-toggle: hsl(25, 98%, 40%);
+$dark-orange-key-shadow: hsl(25, 99%, 27%);
+
+$light-grayish-yellow-key-background: hsl(45, 7%, 89%);
+$dark-grayish-orange-key-shadow: hsl(35, 11%, 61%);
+
+// #### Text
+
+$very-dark-grayish-yellow: hsl(60, 10%, 19%);
+$white-text: hsl(0, 0, 100%);
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+//   margin-right: 15px;
+}
+
+@mixin display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    :hover button {
+        cursor: pointer;
+    }
+    :hover {
+        transition: 200ms;
+    }
+    border-radius: 8px;  //********Note this universal attribute when copying*******
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: $very-dark-desaturated-blue-main-bg;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+}
+
+.header-container {
+    width: 540px;
+    display: flex;
+    justify-content: space-between;
+    color: $white-text;
+    .logo {
+        font-size: .7em;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.theme-container {
+    display: flex;
+    .left-col {
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 5px;
+        width: 75px;
+        font-size: .4em;
+        letter-spacing: 1px;
+    }
+    .right-col {
+        display: flex;
+        flex-direction: column;
+        .theme-number {
+            padding-left: 7px;
+            text-align: center;
+            letter-spacing: 6px;
+            font-size: .4em;
+            padding-bottom: 3px;
+        }
+    }
+}
+
+.theme-switch-container {
+    display: flex;
+    align-items: center;
+    height: 27px;
+    width: 1.5em;
+    background-color: $very-dark-desaturated-blue-toggle-bg;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    .theme-switch {
+        width: 18px;
+        height: 18px;
+        border-radius: 50px;
+        background-color: hsl(6, 63%, 50%);
+        transition: margin 200ms;
+    }
+}
+
+.flip-theme-switch {
+    margin-left: 20px;
+}
+
+.answer-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: $white;
+    height: 130px;
+    width: 540px;
+    padding: 37px;
+    background-color: $very-dark-desaturated-blue-screen-bg;
+    margin: 25px 0 25px 0;
+    .screen {
+        font-size: 1.4em;
+    }
+}
+
+.keypad-container {
+    display: grid;
+    justify-content: center;
+    gap: 23px;
+    padding: 30px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 65px 65px 65px 65px 65px;
+    width: 540px;
+    height: 475px;
+    background-color: $very-dark-desaturated-blue-toggle-bg;
+    .key {
+        z-index: 1;
+    }
+    .numbers, .decimal, .zero, .plus, .minus, .divide, .multiply {
+        @include display;
+        background-color: $light-grayish-orange-key-background;
+        color: $very-dark-grayish-blue;
+        border-bottom: 4px $Grayish-orange-key-shadow solid;
+    }
+    .key:hover {
+        cursor: pointer;
+    }
+    .reset, .equals {
+        grid-column: span 2;
+    }
+    .equals {
+        background-color: $red-key-background-toggle;
+        color: $white-text;
+        @include display;
+        border-bottom: 4px $dark-red-key-shadow solid;
+    }
+    :where(.numbers, .decimal, .zero, .plus, .minus, .divide, .multiply):active {
+        border-top: 4px $Grayish-orange-key-shadow solid;
+        border-bottom: 0;
+    }
+    :where(.reset, .del):active {
+        border-top: 4px $desaturated-dark-blue-key-shadow solid;
+        border-bottom: 0;
+    }
+    .equals:active {
+        border-top: 4px $dark-red-key-shadow solid;
+        border-bottom: 0;
+    }
+}
+
+.reset, .del {
+    @include display;
+    color: $white-text;
+    font-size: .6em;
+    background-color: $desaturated-dark-blue-key-background;
+    border-bottom: 4px $desaturated-dark-blue-key-shadow solid;
+}
+
+
+// Theme 2 toggles
+.body-light {
+    background-color: $light-gray-main-background;
+}
+.keypad-light {
+    background-color: $grayis-red-toggle-background-keypad-background;
+}
+.delete-reset-light {
+    background-color: $dark-moderate-cyan-key-background;
+    border-bottom: 4px $very-dark-cyan-key-shadow solid;
+}
+.header-light {
+    color: $very-dark-grayish-blue;
+}
+.answer-container-light {
+    background-color: $white;
+    color: $very-dark-grayish-blue;
+}
+
+
+
+footer {
+    position: absolute;
+    right: -230px;
+    bottom: 210px;
+    color: darkgray;
+    // z-index: -1;
+    .footer-text {
+        font-size: .45em;
+        a {
+            font-size: 1.2em;
+            color: darkgray;
+        }
+        transform: rotate(-90deg);
+    }
+}

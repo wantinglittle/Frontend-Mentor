@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+@use "light";
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Spartan', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+* :hover button {
+  cursor: pointer;
+}
+
+* :hover {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3a4764;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin-top: 15px;
+}
+
+.header-container {
+  width: 540px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+.header-container .logo {
+  font-size: .7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.theme-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.theme-container .left-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 5px;
+  width: 75px;
+  font-size: .4em;
+  letter-spacing: 1px;
+}
+
+.theme-container .right-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.theme-container .right-col .theme-number {
+  padding-left: 7px;
+  text-align: center;
+  letter-spacing: 6px;
+  font-size: .4em;
+  padding-bottom: 3px;
+}
+
+.theme-switch-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 27px;
+  width: 1.5em;
+  background-color: #232c43;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.theme-switch-container .theme-switch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  background-color: #d03f2f;
+  -webkit-transition: margin 200ms;
+  transition: margin 200ms;
+}
+
+.flip-theme-switch {
+  margin-left: 20px;
+}
+
+.answer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: white;
+  height: 130px;
+  width: 540px;
+  padding: 37px;
+  background-color: #182034;
+  margin: 25px 0 25px 0;
+}
+
+.answer-container .screen {
+  font-size: 1.4em;
+}
+
+.keypad-container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 23px;
+  padding: 30px;
+  -ms-grid-columns: 100px 100px 100px 100px;
+      grid-template-columns: 100px 100px 100px 100px;
+  -ms-grid-rows: 65px 65px 65px 65px 65px;
+      grid-template-rows: 65px 65px 65px 65px 65px;
+  width: 540px;
+  height: 475px;
+  background-color: #232c43;
+}
+
+.keypad-container .key {
+  z-index: 1;
+}
+
+.keypad-container .numbers, .keypad-container .decimal, .keypad-container .zero, .keypad-container .plus, .keypad-container .minus, .keypad-container .divide, .keypad-container .multiply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 7px;
+  background-color: #eae3dc;
+  color: #444b5a;
+  border-bottom: 4px #b4a597 solid;
+}
+
+.keypad-container .key:hover {
+  cursor: pointer;
+}
+
+.keypad-container .reset, .keypad-container .equals {
+  grid-column: span 2;
+}
+
+.keypad-container .equals {
+  background-color: #d03f2f;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 7px;
+  border-bottom: 4px #93261a solid;
+}
+
+.keypad-container :where(.numbers, .decimal, .zero, .plus, .minus, .divide, .multiply):active {
+  border-top: 4px #b4a597 solid;
+  border-bottom: 0;
+}
+
+.keypad-container :where(.reset, .del):active {
+  border-top: 4px #404e72 solid;
+  border-bottom: 0;
+}
+
+.keypad-container .equals:active {
+  border-top: 4px #93261a solid;
+  border-bottom: 0;
+}
+
+.reset, .del {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 7px;
+  color: white;
+  font-size: .6em;
+  background-color: #637097;
+  border-bottom: 4px #404e72 solid;
+}
+
+.body-light {
+  background-color: #e6e6e6;
+}
+
+.keypad-light {
+  background-color: #d1cccc;
+}
+
+.delete-reset-light {
+  background-color: #377f86;
+  border-bottom: 4px #1b5f65 solid;
+}
+
+.header-light {
+  color: #444b5a;
+}
+
+.answer-container-light {
+  background-color: white;
+  color: #444b5a;
+}
+
+footer {
+  position: absolute;
+  right: -230px;
+  bottom: 210px;
+  color: darkgray;
+}
+
+footer .footer-text {
+  font-size: .45em;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+footer .footer-text a {
+  font-size: 1.2em;
+  color: darkgray;
+}
+/*# sourceMappingURL=style.css.map */
