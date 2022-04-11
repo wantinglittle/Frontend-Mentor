@@ -37,21 +37,15 @@ numbers.forEach(number => {
             return
         }
         
-        if(decimalSwitch==1 || screen.innerHTML!='0.' && computingCode==0) { 
-        screen.innerHTML+= number.innerHTML
-        console.log(screen.innerHTML.length)
-        } 
-
-        if(computingCode==5) {
+        if(decimalSwitch==0 && screen.innerHTML=='0.' || firstNumAfterCompute==1){
             screen.innerHTML = number.innerHTML
-            answer=0
-            computingCode=0    
+            firstNumAfterCompute=0    
         }
 
         else {
-        screen.innerHTML = number.innerHTML
-        
+        screen.innerHTML+= number.innerHTML
         } 
+        
     })
 })
 
@@ -61,13 +55,35 @@ zero.addEventListener('click', () => {
     if (screen.innerHTML.length >= maxLength) {
         return
     }
-    if(decimalSwitch!=0 || screen.innerHTML!='0.' && computingCode==0) {
+    if(decimalSwitch!=0 && firstNumAfterCompute==0) {
         screen.innerHTML+='0'
     }
-    if(computingCode!=0) {
-        screen.innerHTML=='0.'
+    if(decimalSwitch==0 && screen.innerHTML!='0.' && firstNumAfterCompute==0) {
+        screen.innerHTML+='0'
+    }
+})
+
+//decimal key
+const decimal = document.querySelector('.decimal')
+decimal.addEventListener('click', () => {
+    if (screen.innerHTML.length >= maxLength) {
+        return
+    }
+        
+    if(screen.innerHTML.indexOf('.')==-1 && firstNumAfterCompute==0) {
+        screen.innerHTML+='.'
+        decimalSwitch=1
     }
 
+    if(screen.innerHTML=='0.' && firstNumAfterCompute==0) {
+        decimalSwitch=1
+    }
+
+    if(firstNumAfterCompute==1) {
+            screen.innerHTML='0.'
+        decimalSwitch=1
+        firstNumAfterCompute=0
+    }
 })
 
 //reset key
@@ -90,17 +106,8 @@ deleteKey.addEventListener('click', () => {
 
 })
 
-//decimal key
-const decimal = document.querySelector('.decimal')
-decimal.addEventListener('click', () => {
-    if (screen.innerHTML.length >= maxLength) {
-        return
-    }
-    decimalSwitch=1
-    if(screen.innerHTML.indexOf('.')==-1 && computingCode==0) {
-        screen.innerHTML+='.'
-    }
-})
+
+
 
 //arithmetic keys
 
@@ -111,23 +118,28 @@ const divide = document.querySelector('.divide')
 const equals = document.querySelector('.equals')
 let computingCode = 0
 let answer = 0
+let firstNumAfterCompute = 0
 
 //Calculation funtion
 let compute = () => {
+    let x = 1000000000000000
     if (computingCode==0) {
-        answer = parseInt(screen.innerHTML)
+        answer = Number(screen.innerHTML)
     }
     if (computingCode==1) {
-        answer+= parseInt(screen.innerHTML)
+        answer = ((Math.floor(answer*x))+Math.floor(Number(screen.innerHTML)*x))/x
     }
     if (computingCode==2) {
-        answer-= parseInt(screen.innerHTML)
+        answer = ((Math.floor(answer*x))-Math.floor(Number(screen.innerHTML)*x))/x
     }
     if (computingCode==3) {
-        answer*= parseInt(screen.innerHTML)
+        answer = (Math.floor(answer*x) * Math.floor(Number(screen.innerHTML)*x))/x/x
     }
     if (computingCode==4) {
-        answer/= parseInt(screen.innerHTML)
+        answer = (Math.floor(answer*x) / Math.floor(Number(screen.innerHTML)*x))
+
+        // console.log(Math.floor(answer*x))
+        // console.log(Math.floor(Number(screen.innerHTML)*x))
     }
 }
 
@@ -135,29 +147,34 @@ let compute = () => {
 add.addEventListener('click', () => {
     compute()
     computingCode=1
-    
+    firstNumAfterCompute=1
 })
 
 sub.addEventListener('click', () => {
     compute()
     computingCode=2
-    
+    firstNumAfterCompute=1
 })
 
 multiply.addEventListener('click', () => {
     compute()
     computingCode=3
-    
+    firstNumAfterCompute=1
 })
 
 divide.addEventListener('click', () => {
     compute()
     computingCode=4
-    
+    firstNumAfterCompute=1
 })
 
 equals.addEventListener('click', () => {
     compute()
-    screen.innerHTML=answer
-    computingCode=5
+    let y = answer.toString().length
+    if (y>maxLength){
+        screen.innerHTML='Number too big'
+    }
+    else {screen.innerHTML=answer}
+    answer=0
+    firstNumAfterCompute=1
 })

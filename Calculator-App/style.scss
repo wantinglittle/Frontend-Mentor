@@ -244,14 +244,14 @@ body {
 
 footer {
     position: absolute;
-    right: -230px;
+    right: -220px;
     bottom: 210px;
     color: darkgray;
     // z-index: -1;
     .footer-text {
         font-size: .45em;
         a {
-            font-size: 1.2em;
+            font-size: 1em;
             color: darkgray;
         }
         transform: rotate(-90deg);

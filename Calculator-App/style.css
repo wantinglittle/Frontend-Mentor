@@ -279,7 +279,7 @@ body {
 
 footer {
   position: absolute;
-  right: -230px;
+  right: -220px;
   bottom: 210px;
   color: darkgray;
 }
@@ -291,7 +291,7 @@ footer .footer-text {
 }
 
 footer .footer-text a {
-  font-size: 1.2em;
+  font-size: 1em;
   color: darkgray;
 }
 /*# sourceMappingURL=style.css.map */
