@@ -178,3 +178,4 @@ equals.addEventListener('click', () => {
     answer=0
     firstNumAfterCompute=1
 })
+

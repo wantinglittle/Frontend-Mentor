@@ -247,7 +247,6 @@ footer {
     right: -220px;
     bottom: 210px;
     color: darkgray;
-    // z-index: -1;
     .footer-text {
         font-size: .45em;
         a {
@@ -255,5 +254,41 @@ footer {
             color: darkgray;
         }
         transform: rotate(-90deg);
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 675px) {
+    .header-container {
+        width: 325px;
+        .logo {
+            font-size: 1em;
+        }
+    }
+    .answer-container {
+        width: 325px;
+        height: 90px;
+        padding: 39px 21px 37px 21px;
+        .screen {
+            font-size: 1em;
+        }
+    }
+    .keypad-container {
+        grid-template-columns: 60px 60px 60px 60px;
+        grid-template-rows: 65px 65px 65px 65px 65px;
+        width: 325px;
+        height: 420px;
+        gap: 13px;
+        padding: 24px;
+    }
+    footer {
+        left: 15px;
+        bottom: -25px;
+        width: fit-content;
+        .footer-text {
+            position: static;
+            transform: none;
+            font-size: .35em;
+        }
     }
 }

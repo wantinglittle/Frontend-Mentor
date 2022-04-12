@@ -288,10 +288,51 @@ footer .footer-text {
   font-size: .45em;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  overflow: hidden;
 }
 
 footer .footer-text a {
   font-size: 1em;
   color: darkgray;
+}
+
+@media (max-width: 675px) {
+  .header-container {
+    width: 325px;
+  }
+  .header-container .logo {
+    font-size: 1em;
+  }
+  .answer-container {
+    width: 325px;
+    height: 90px;
+    padding: 39px 21px 37px 21px;
+  }
+  .answer-container .screen {
+    font-size: 1em;
+  }
+  .keypad-container {
+    -ms-grid-columns: 60px 60px 60px 60px;
+        grid-template-columns: 60px 60px 60px 60px;
+    -ms-grid-rows: 65px 65px 65px 65px 65px;
+        grid-template-rows: 65px 65px 65px 65px 65px;
+    width: 325px;
+    height: 420px;
+    gap: 13px;
+    padding: 24px;
+  }
+  footer {
+    left: 15px;
+    bottom: -25px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  footer .footer-text {
+    position: static;
+    -webkit-transform: none;
+            transform: none;
+    font-size: .35em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
