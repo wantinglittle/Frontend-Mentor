@@ -18,8 +18,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url(images/bg.jpg) no-repeat center #cecef6;
-  background-position-y: -450px;
+  background: url(images/bg.jpg) no-repeat center center #cecef6;
+  background-size: 100%;
+  /* background-position-y: -450px; */
   margin: 0px;
   width: 100%;
   height: 100vh;
