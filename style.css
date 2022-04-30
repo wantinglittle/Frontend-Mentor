@@ -39,6 +39,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   min-width: 450px;
+  padding-top: 30px;
 }
 
 .links {
@@ -50,18 +51,23 @@ body {
   height: fit-content;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  font-size: 2rem;
-}
-
-.links .right-col {
-  padding-left: 20px;
-  width: 400px;
-  padding-bottom: 60px;
+  font-size: 1.9rem;
 }
 
 .links .left-col {
   width: 400px;
   padding-left: 20px;
+}
+
+.links .middle-col {
+  padding-left: 20px;
+  width: 400px;
+}
+
+.links .right-col {
+  width: 400px;
+  padding-left: 20px;
+  padding-bottom: 60px;
 }
 
 a {
